@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yangcongs.github.io</id>
     <title>仓鼠库</title>
-    <updated>2020-04-24T02:46:49.555Z</updated>
+    <updated>2020-04-24T06:19:01.887Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yangcongs.github.io"/>
     <link rel="self" href="https://yangcongs.github.io/atom.xml"/>
@@ -16,8 +16,7 @@
         <link href="https://yangcongs.github.io/post/markdown-yufa/">
         </link>
         <updated>2020-04-24T02:26:45.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="markdown语法大全超级版"># Markdown语法大全(超级版)</h2>
-<p>本文转载自<a href="https://www.jianshu.com/p/ebe52d2d468f#fnref2">简书</a>，著作权归作者<a href="https://www.jianshu.com/u/16d77399d3a7">择势勤</a>所有。</p>
+        <content type="html"><![CDATA[<p>本文转载自<a href="https://www.jianshu.com/p/ebe52d2d468f#fnref2">简书</a>，著作权归作者<a href="https://www.jianshu.com/u/16d77399d3a7">择势勤</a>所有。</p>
 <p><strong>说明</strong>：现在markDown编译器和各平台支持情况都不太统一，为了达到一些效果会使用语法超集，但有些平台支持不好，请自行裁剪。简书使用的精简语法集合，文中有些语法效果显示不出来，为了发文的格式统一，同时也建议谨慎使用此类语法。</p>
 <h2 id="一-概述">一、概述</h2>
 <h3 id="11-设计理念">1.1 设计理念</h3>
