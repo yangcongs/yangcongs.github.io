@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yangcongs.github.io</id>
     <title>仓鼠库</title>
-    <updated>2020-04-24T09:49:40.726Z</updated>
+    <updated>2020-04-25T02:16:32.736Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yangcongs.github.io"/>
     <link rel="self" href="https://yangcongs.github.io/atom.xml"/>
@@ -11,11 +11,226 @@
     <icon>https://yangcongs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 仓鼠库</rights>
     <entry>
-        <title type="html"><![CDATA[Markdown语法大全(超级版)]]></title>
-        <id>https://yangcongs.github.io/post/markdown-yufa/</id>
-        <link href="https://yangcongs.github.io/post/markdown-yufa/">
+        <title type="html"><![CDATA[【Excel-VBA】点击添加按钮，第一列字母递增]]></title>
+        <id>https://yangcongs.github.io/post/excel-diyiliedizeng/</id>
+        <link href="https://yangcongs.github.io/post/excel-diyiliedizeng/">
         </link>
-        <updated>2020-04-24T02:26:45.000Z</updated>
+        <updated>2020-04-24T23:01:20.000Z</updated>
+        <summary type="html"><![CDATA[<p><a href="https://www.52pojie.cn/thread-1012274-1-1.html">吾爱</a>上有人提问，刚好有空就顺手写了一下，也搬回来以备后期使用。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p><a href="https://www.52pojie.cn/thread-1012274-1-1.html">吾爱</a>上有人提问，刚好有空就顺手写了一下，也搬回来以备后期使用。</p>
+<!-- more -->
+<pre><code class="language-xml">'作者：yangcongs
+'时间：2019.8.22
+'版本：V1.0
+ 
+Sub 宏1()
+    Dim Ln         As String          '第一列最后一次出现的非空单元格的行号
+    Dim str        As String          '单元格中的字符串
+    Dim a          As Long            '字符串长度
+    Dim str1       As String          '字符串中的最后一个字母
+    Dim str2       As String          '字符串中的第一个字母
+    Dim Fv         As String          '字符串最后一个字母的编码字符
+    Dim Sv         As String          '字符串第一个字母的编码字符
+    Dim AddV       As String          '下一个单元格应填入的字母序号
+ 
+    '取第一列最后一次出现的非空单元格的行号
+    Ln = Cells(Rows.Count, 1).End(xlUp).Row
+    '取出该单元格中的字符串
+    str = Range(&quot;A&quot; + Ln).Value
+    '获取该字符串的长度
+    a = Len(str)
+    '判断字符串中字母个数
+ 
+    '如果只有一个字母
+    If a = 1 Then
+        '把字母转换成编码字符
+        Fv = Right(&quot;000&quot; + AscW(str), 4)
+        Fv = Fv + 1
+        '判断该字母的编码字符递增之后是否超出大写字母的界限
+ 
+        If Fv &gt; 90 Then
+            '如果超出界限,则下一个单元格应填入&quot;AA&quot;
+            Worksheets(&quot;Sheet1&quot;).Range(&quot;A&quot; &amp; Ln + 1).Value = &quot;AA&quot;
+        Else
+            '如果没有超出界限，则把该编码字符转换成字母
+            AddV = Chr(Fv)
+            '把该字母填入下一个单元格
+            Worksheets(&quot;Sheet1&quot;).Range(&quot;A&quot; &amp; Ln + 1).Value = AddV
+        End If
+ 
+        '如果有两个字母
+    ElseIf a = 2 Then
+        '取出最后一个字母
+        str1 = Right(str, 1)
+        '取出第一个字母
+        str2 = Mid(str, 1, 1)
+        '把最后一个字母转换成编码字符
+        Fv = Right(&quot;000&quot; + AscW(str1), 4)
+        Fv = Fv + 1
+        '判断最后一个字母的编码字符递增之后是否超出大写字母的界限
+ 
+        If Fv &gt; 90 Then
+            '如果超出界限,则最后一个字母递增之后应为&quot;A&quot;
+            '此时需要把第一个字母递增
+ 
+            '把第一个字母转换成编码字符
+            Sv = Right(&quot;000&quot; + AscW(str2), 4)
+            Sv = Sv + 1
+            '判断第一个字母的编码字符递增之后是否超出大写字母的界限
+             
+            If Sv &gt; 90 Then
+                '如果超出界限，此时两个字母都是&quot;Z&quot;,到达上限
+                '我给出的处理是弹出提示框，结束程序
+                MsgBox (&quot;已经到达最大行！&quot;)
+                '退出程序
+                Exit Sub
+            Else
+                '如果没有超出界限，把递增之后的第一个字母的编码字符转换成字母
+                AddV = Chr(Sv)
+                '把递增之后的字母填入下一个单元格
+                Worksheets(&quot;Sheet1&quot;).Range(&quot;A&quot; &amp; Ln + 1).Value = AddV &amp; &quot;A&quot;
+            End If
+        Else
+            '如果没有超出界限，则第一个字母不变，第二个字母递增
+ 
+            '把第二个字母递增之后的编码字符转换成字母
+            AddV = Chr(Fv)
+            '把递增之后的字母填入下一个单元格
+            Worksheets(&quot;Sheet1&quot;).Range(&quot;A&quot; &amp; Ln + 1).Value = str2 &amp; AddV
+        End If
+    End If
+End Sub
+</code></pre>
+<p><a href="http://t.cn/AiQYsdSU">成品链接</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[PiP-Tool，一款可以让电脑的任意区域都实现置顶效果的软件（搬运）]]></title>
+        <id>https://yangcongs.github.io/post/Windows-pip-tool/</id>
+        <link href="https://yangcongs.github.io/post/Windows-pip-tool/">
+        </link>
+        <updated>2020-04-24T22:53:02.000Z</updated>
+        <summary type="html"><![CDATA[<p>这次搬运来的这款软件只有一个功能：在电脑上实现画中画效果。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>这次搬运来的这款软件只有一个功能：在电脑上实现画中画效果。</p>
+<!-- more -->
+<p>作者在GitHub中的解释为：</p>
+<p><font color=#00ffff size=3>画中画工具是在Windows上使用画中画模式的软件。此功能使您可以在继续使用Windows上的任何其他软件的同时，以缩略图形式在屏幕上观看内容（例如视频）。</font></p>
+<p><font color=#00ffff size=3>要使用此工具，请选择一个窗口和该窗口的区域，然后进行验证。随即出现一个带有选定区域的新窗口（始终在顶部）。该软件在最小化窗口的情况下仍无法运行（如果您正在观看视频，并且最小化窗口，则画中画模式下的视频将停止）。</font></p>
+<p><img src="https://attach.52pojie.cn/forum/201912/10/092353lzojmj6myhnmunob.png" alt="" loading="lazy"><br>
+安装时除了选择安装位置，其他一直点next就行了，安装完之后桌面会出线一个这样的图标<br>
+<img src="https://attach.52pojie.cn/forum/201912/10/085852ndh6vzdwzvvoq89l.png" alt="" loading="lazy"><br>
+点击图标之后会出现这样的一个窗口，这时候点击下拉箭头，你所打开的程序就会在下拉条中出现。<br>
+<img src="https://attach.52pojie.cn/forum/201912/10/090142e1ts26u6z6o6f39h.png" alt="" loading="lazy"><br>
+选择你要实现画中画功能的程序，调整画框大小，你就可以为所欲为了<br>
+<img src="https://attach.52pojie.cn/forum/201912/10/092417exk5bjf4hxk2tub3.png" alt="" loading="lazy"><br>
+<img src="https://attach.52pojie.cn/forum/201912/10/092456fv1ptxtiw1lvv3tz.png" alt="" loading="lazy"><br>
+<img src="https://i.loli.net/2019/12/10/nwGoQakLgrZiMD6.gif" alt="" loading="lazy"><br>
+你可以用来追剧、多窗口查阅资料等等，<br>
+<img src="https://attach.52pojie.cn/forum/201912/10/094027wrr2msjnnakana6b.gif" alt="" loading="lazy"><br>
+甚至你想在群里潜水但是又比较忙，你就可以只截取一部分让他置顶暗中观察。</p>
+<p>其他功能请自行探索。</p>
+<p><font color=#cc2314 size=3>安装要求：</font>（多谢@xiaosuobjsd 提醒）<br>
+<font color=#cc2314 size=3>1.Microsoft Windows Vista或更高版本（64位）。</font><br>
+<font color=#cc2314 size=3>2.Microsoft .NET Framework 4.7</font></p>
+<p>注意：<br>
+本软件工作流程跟Snipaste类似，是把你需要置顶的内容按你框选的位置提取出来置顶。<br>
+不过Snipaste是单纯地截屏，把当前页面内容截取出来置顶。<br>
+而本软件是动态截取，截取之后你在源位置的所有操作都会显示在置顶窗口中，比如：<br>
+<img src="https://attach.52pojie.cn/forum/201912/10/133805s3b0lqbql1z3033i.gif" alt="" loading="lazy"><br>
+你会发现我不管是在TIM中打字还是什么，所有的动态变化都会在置顶界面中同步显示。</p>
+<p>弄清楚这波操作之后下面所说的问题就很容易理解了：<br>
+如果你用浏览器看视频的时候把浏览器最小化，而你看视频的那个网站没有后台播放功能的话，视频的播放就会自动暂停。<br>
+而这时候置顶窗口中显示的就是暂停之后的画面，看起来是置顶的画面不动了，好像是软件不能播放视频，但这个情况真不是本软件的锅。<br>
+解决办法是你不要最小化，直接用别的软件窗口来覆盖这个浏览器的窗口，或者换一个影视网站。（多谢@瑪奇 提醒）</p>
+<p><a href="https://github.com/LionelJouin/PiP-Tool">GitHub地址</a><br>
+<a href="http://t.cn/AienEMHG">安装包地址</a></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[【VB.NET】远程关机工具（基于腾讯文档，可自行修改）]]></title>
+        <id>https://yangcongs.github.io/post/vbnet-yuanchengguanji/</id>
+        <link href="https://yangcongs.github.io/post/vbnet-yuanchengguanji/">
+        </link>
+        <updated>2020-04-24T12:30:32.000Z</updated>
+        <summary type="html"><![CDATA[<p>本来是发表在吾爱的帖子，既然有了自己的小窝，还是搬回来一份好了</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>本来是发表在吾爱的帖子，既然有了自己的小窝，还是搬回来一份好了</p>
+<!-- more -->
+<hr>
+<h1 id="背景">背景</h1>
+<p>因为工作需要，经常两个办公室跑，两个办公室离得还有点远<br>
+下了班还要两头跑着关电脑，感觉很麻烦<br>
+所以想找一个远程关机的小程序<br>
+论坛搜索出了很多大神的作品</p>
+<h1 id="比如">比如：</h1>
+<p><a href="https://www.52pojie.cn/thread-994803-1-1.html">夕风远程关机工具V1.1 ， 可实现远程关机、定时关机、取消关机</a> （基于有道云）<br>
+<a href="https://www.52pojie.cn/thread-853364-1-1.html">通过网易云歌单 远程关机</a> （基于网易云）<br>
+<a href="https://www.52pojie.cn/thread-447688-1-1.html">远程关机工具--ReShutDown--【VB源码】</a> （基于贴吧）</p>
+<h1 id="等等">等等</h1>
+<p>但是跟我预期的有点差别<br>
+有道云和网易云我平时用的不多，为了远程关机再去多用一个软件什么的觉得有点麻烦了<br>
+至于基于贴吧的，首先要有一个自己的贴吧，然后我觉得楼主自己都被坑了，一不小心被别人关机，很心塞，</p>
+<p>然后就想着干脆自己写一个好了，刚好自己知道一点点VB，于是本作品就诞生了</p>
+<h1 id="过程">过程</h1>
+<p>因为我平时TIM用的比较多，TIM上又内置的有腾讯文档，所以本程序是基于腾讯文档制作的</p>
+<p>本来看到@yswqq2008 开源了自己的程序，有一点点小激动，想着改一下网站什么的就好了<br>
+但是结果啪啪啪打脸，大佬的软件是通过读取网页源码来找到指令的<br>
+不过这些个云文档的网页源码里并没有加载出文档内容，他们好像是二次加载（这么描述大佬应该懂我的意思吧）出来的</p>
+<p>由于我不懂怎么去爬数据，所以直接获取网页源码并不能获取到指令<br>
+@fantastic 和 @xiyuboy 两位大佬应该是会的，但是我请教@fantastic并没有收到回复<br>
+郁闷了好几天，灵光一闪，何不利用WebBrowser控件把网页加载进form<br>
+然后网页到了自己的地盘不是想怎么盘怎么盘</p>
+<h3 id="下面是本程序获取远端指令的代码">下面是本程序获取远端指令的代码：</h3>
+<pre><code class="language-xml">If (WebBrowser1.Document IsNot Nothing) Then
+    Dim Elems As HtmlElementCollection
+    Dim WebOC As WebBrowser = WebBrowser1
+    Elems = WebOC.Document.GetElementsByTagName(&quot;div&quot;) '取出源码中所有div
+    For Each elem As HtmlElement In Elems
+        Dim NameStr As String = elem.GetAttribute(&quot;id&quot;) '取出div中所有id
+        If ((NameStr IsNot Nothing) And (NameStr.Length &lt;&gt; 0)) Then
+            Dim leftString = Mid(NameStr, 1, 10) '取id前面10位数
+            If leftString.ToLower().Equals(&quot;magicdomid&quot;) Then
+                Dim ContentStr = WebOC.Document.GetElementById(NameStr).InnerText '读取当前指令
+                If ContentStr &lt;&gt; &quot;&quot; Then
+                    MessageBox.Show(&quot;当前远端指令为：&quot; + ContentStr)
+                End If
+            End If
+        End If
+    Next
+End If
+</code></pre>
+<p>下面是以上代码中所需网页元素的查找示意图：<br>
+<img src="https://attach.52pojie.cn/forum/201908/01/141811qudcrxux50u6rusc.png" alt="示意图" title="示意图" loading="lazy"></p>
+<p>本程序中需要的id“magicdomid2”每次修改文本内容后，数字后缀都会动态改变，刷新网页又会恢复成“magicdomid2”<br>
+所以我取出所有的id为“magicdomid”的文本内容加以对比，然后筛选出自己需要的文本</p>
+<p><mark>我觉得这个代码是万金油</mark>，可以抓取不同网站二次加载的数据，</p>
+<p>打开你需要抓取数据的网页，按F12查看源码，根据需要按以下规则改写代码，就可以抓取该网页的对应内容了</p>
+<p>先通过WebOC.Document.GetElementsByTagName(&quot;头文件&quot;) 筛选出源码中所有拥有相同头文件（大概是这个名字吧，就是代码前面的紫色文本）的代码</p>
+<p>然后使用GetAttribute(&quot;id&quot;)取出该“id”等号后的内容（此处的“id”可以是所有等号前的橙色文本）</p>
+<p>如果需要取出该“id”下的文本内容就使用WebOC.Document.GetElementById(NameStr).InnerText（此处的“id”必须是如图中该文本的“id”）</p>
+<h1 id="结果">结果</h1>
+<p>下面贴一下我简陋的界面：<br>
+<img src="https://attach.52pojie.cn/forum/201908/01/113839qpd7cidycbk8gdj8.png" alt="软件界面" title="软件界面" loading="lazy"></p>
+<p>其中：<br>
+“监控网址”就是你作为远程控制的文档分享链接<br>
+“监控时间间隔“是每隔多久检测一次文档内指令<br>
+“预设指令就是文档中你设置的用来关机的指令</p>
+<p>由于我只需要关机这一个功能，所以暂时只写了关机指令，<br>
+如有需要其他功能的，请拿去自行添加</p>
+<p><a href="http://t.cn/AiYqo63J">程序连接</a><br>
+解压后打开exe文件，输入腾讯文档分享链接即可使用</p>
+<p>下面直接上<a href="http://t.cn/AiYbgxti">源码</a>，各位大神别嫌弃</p>
+<p>如需转载，请注明出处！</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Markdown语法大全(超级版)]]></title>
+        <id>https://yangcongs.github.io/post/markdown-yufadaquan/</id>
+        <link href="https://yangcongs.github.io/post/markdown-yufadaquan/">
+        </link>
+        <updated>2020-04-23T23:26:45.000Z</updated>
         <content type="html"><![CDATA[<p>本文转载自<a href="https://www.jianshu.com/p/ebe52d2d468f#fnref2">简书</a>，著作权归作者<a href="https://www.jianshu.com/u/16d77399d3a7">择势勤</a>所有。</p>
 <p><strong>说明</strong>：现在markDown编译器和各平台支持情况都不太统一，为了达到一些效果会使用语法超集，但有些平台支持不好，请自行裁剪。简书使用的精简语法集合，文中有些语法效果显示不出来，为了发文的格式统一，同时也建议谨慎使用此类语法。</p>
 <h2 id="一-概述">一、概述</h2>
