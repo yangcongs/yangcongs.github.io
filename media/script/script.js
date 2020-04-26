@@ -247,14 +247,14 @@ document.ready(
             if (mobile_toggle_theme_en_display == "inline")
                 mobile_toggle_theme_en.innerText = "·Dark";
             else
-                mobile_toggle_theme_zh.innerText = "·\u6697\u9ED1";
+                mobile_toggle_theme_zh.innerText = "·\u65e5\u95f4\u6a21\u5f0f";
         } else {
             switch_default.checked = true;
             // mobile
             if (mobile_toggle_theme_en_display == "inline")
                 mobile_toggle_theme_en.innerText = "·Light";
             else
-                mobile_toggle_theme_zh.innerText = "·\u65E5\u95F4";
+                mobile_toggle_theme_zh.innerText = "·\u9ed1\u591c\u6a21\u5f0f";
         }
         _Blog.toggleTheme = function() {
             if (isDark) {
@@ -263,14 +263,14 @@ document.ready(
                 if (mobile_toggle_theme_en_display == "inline")
                     mobile_toggle_theme_en.innerText = "·Dark";
                 else
-                    mobile_toggle_theme_zh.innerText = "·\u6697\u9ED1";
+                    mobile_toggle_theme_zh.innerText = "·\u65e5\u95f4\u6a21\u5f0f";
             } else {
                 document.getElementsByTagName('body')[0].classList.remove('dark-theme');
                 // mobile
                 if (mobile_toggle_theme_en_display == "inline")
                     mobile_toggle_theme_en.innerText = "·Light";
                 else
-                    mobile_toggle_theme_zh.innerText = "·\u65E5\u95F4";
+                    mobile_toggle_theme_zh.innerText = "·\u9ed1\u591c\u6a21\u5f0f";
             }
             document.getElementsByClassName('toggleBtn')[0].addEventListener('click', () => {
                     if (document.getElementsByTagName('body')[0].classList.contains('dark-theme')) {
@@ -291,7 +291,7 @@ document.ready(
                         if (mobile_toggle_theme_en_display == "inline") {
                             mobile_toggle_theme_en.innerText = "·Light";
                         } else {
-                            mobile_toggle_theme_zh.innerText = "·\u65E5\u95F4";
+                            mobile_toggle_theme_zh.innerText = "·\u9ed1\u591c\u6a21\u5f0f";
                         }
                     } else {
                         document.getElementsByTagName('body')[0].classList.add('dark-theme');
@@ -299,7 +299,7 @@ document.ready(
                         if (mobile_toggle_theme_en_display == "inline")
                             mobile_toggle_theme_en.innerText = "·Dark";
                         else
-                            mobile_toggle_theme_zh.innerText = "·\u6697\u9ED1";
+                            mobile_toggle_theme_zh.innerText = "·\u65e5\u95f4\u6a21\u5f0f";
                     }
                     window.localStorage && window.localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light', );
                     location.reload()
@@ -313,7 +313,7 @@ document.ready(
                     if (mobile_toggle_theme_en_display == "inline")
                         mobile_toggle_theme_en.innerText = "·Light";
                     else
-                        mobile_toggle_theme_zh.innerText = "·\u65E5\u95F4";
+                        mobile_toggle_theme_zh.innerText = "·\u9ed1\u591c\u6a21\u5f0f";
 
                 } else {
                     document.getElementsByTagName('body')[0].classList.add('dark-theme');
@@ -321,7 +321,7 @@ document.ready(
                     if (mobile_toggle_theme_en_display == "inline")
                         mobile_toggle_theme_en.innerText = "·Dark";
                     else
-                        mobile_toggle_theme_zh.innerText = "·\u6697\u9ED1";
+                        mobile_toggle_theme_zh.innerText = "·\u65e5\u95f4\u6a21\u5f0f";
                 }
                 window.localStorage && window.localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light', );
                 //loadlive2d();
