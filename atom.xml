@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yangcongs.github.io</id>
     <title>仓鼠屋</title>
-    <updated>2020-04-28T02:29:09.114Z</updated>
+    <updated>2020-04-28T03:20:40.311Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yangcongs.github.io"/>
     <link rel="self" href="https://yangcongs.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, 仓鼠屋</rights>
     <entry>
         <title type="html"><![CDATA[台式机前面板插上耳机没声音的解决办法]]></title>
-        <id>https://yangcongs.github.io/post/tai-shi-ji-win7-qian-mian-ban-cha-shang-er-ji-mei-sheng-yin-jie-jue-ban-fa/</id>
-        <link href="https://yangcongs.github.io/post/tai-shi-ji-win7-qian-mian-ban-cha-shang-er-ji-mei-sheng-yin-jie-jue-ban-fa/">
+        <id>https://yangcongs.github.io/post/qianmianbanchaerji/</id>
+        <link href="https://yangcongs.github.io/post/qianmianbanchaerji/">
         </link>
         <updated>2020-04-28T02:01:01.000Z</updated>
         <summary type="html"><![CDATA[<p>  前两天同事新装了系统，然后发现机箱前面板插上耳机之后无法识别，于是来找我咨询。</p>
