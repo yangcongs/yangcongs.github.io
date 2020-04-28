@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yangcongs.github.io</id>
     <title>仓鼠屋</title>
-    <updated>2020-04-26T04:20:21.431Z</updated>
+    <updated>2020-04-28T02:29:09.114Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yangcongs.github.io"/>
     <link rel="self" href="https://yangcongs.github.io/atom.xml"/>
@@ -10,6 +10,33 @@
     <logo>https://yangcongs.github.io/images/avatar.png</logo>
     <icon>https://yangcongs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 仓鼠屋</rights>
+    <entry>
+        <title type="html"><![CDATA[台式机前面板插上耳机没声音的解决办法]]></title>
+        <id>https://yangcongs.github.io/post/tai-shi-ji-win7-qian-mian-ban-cha-shang-er-ji-mei-sheng-yin-jie-jue-ban-fa/</id>
+        <link href="https://yangcongs.github.io/post/tai-shi-ji-win7-qian-mian-ban-cha-shang-er-ji-mei-sheng-yin-jie-jue-ban-fa/">
+        </link>
+        <updated>2020-04-28T02:01:01.000Z</updated>
+        <summary type="html"><![CDATA[<p>  前两天同事新装了系统，然后发现机箱前面板插上耳机之后无法识别，于是来找我咨询。</p>
+<p>  这个坑，几乎每一次重装win7都要踩一遍的，所以觉得还是记录一下比较好，下次有人遇到直接丢一个链接过去就能救急了。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>  前两天同事新装了系统，然后发现机箱前面板插上耳机之后无法识别，于是来找我咨询。</p>
+<p>  这个坑，几乎每一次重装win7都要踩一遍的，所以觉得还是记录一下比较好，下次有人遇到直接丢一个链接过去就能救急了。</p>
+<!-- more -->
+<p>  首先我们需要调出“Realtek高清晰音频管理器”，方法很多，最稳妥的每台电脑都适用的方法是通过控制面板，如下图：</p>
+<center>  <!--开始居中对齐-->
+<figure data-type="image" tabindex="1"><img src="https://yangcongs.github.io/post-images/1588039331435.png" alt="" loading="lazy"></figure>
+</center> <!--结束居中对齐-->
+<p>  调出的“Realtek高清晰音频管理器”界面如下图所示：</p>
+<center>  <!--开始居中对齐-->
+<figure data-type="image" tabindex="2"><img src="https://yangcongs.github.io/post-images/1588039385506.png" alt="" loading="lazy"></figure>
+</center> <!--结束居中对齐-->
+<p>  点击右侧黄色小文件夹样式的图标（也有一部分是在右下角有三个图标中的一个，以点击后能弹出以下“插孔设置”窗口为准），然后在“插孔设置”窗口中勾选“禁用前面板插孔检测”，点击确定。</p>
+<center>  <!--开始居中对齐-->
+<figure data-type="image" tabindex="3"><img src="https://yangcongs.github.io/post-images/1588039418627.png" alt="" loading="lazy"></figure>
+</center> <!--结束居中对齐-->
+<p>  此时就可以愉快地使用耳机了。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【Excel-VBA】点击添加按钮，第一列字母递增]]></title>
         <id>https://yangcongs.github.io/post/excel-diyiliedizeng/</id>
