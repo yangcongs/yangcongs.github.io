@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 
 <head>
-    
-        <meta charset="utf-8" />
+    <meta charset="utf-8" />
 <title>
-    文章 | 仓鼠屋
+    仓鼠屋
 </title>
 <!--[if lt IE 9]><script src="//cdn.bootcss.com/html5shiv/r29/html5.js"></script><![endif]-->
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
@@ -48,7 +47,6 @@
                     })();
                 </script>
                 
-            
 </head>
 
 <body>
@@ -175,254 +173,180 @@
 
     }
 </script>
-            <div class="post-main">
-                <div class="post-list">
-                    
-    
-        
-                
-                    
-    
-        
-                
-                    
-    
-        
-                
-                    
-    
-        
-                
-                    
-    
-        
-                
-                    
-    
-        
-                
-                    
-    
-                    
-    
-                    
+            <div class="main">
+                <div class="container">
+                    <article class="post-wrap">
+                        <header class="post-header">
+                            <h1 class="post-title">
+                                VBV.NET调用CMD命令行
+                            </h1>
+                            
+                                    <!--zh-->
+                                    <div class="post-meta zh">
+                                        &#x4F5C;&#x8005;:
+                                        <a itemprop="author" rel="author" href="/">
+                                            仓鼠屋
+                                        </a>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-04-30</a></span>
+                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
+                                    href="#">1.5
+                                    &#x5206;&#x949F;</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">317</a></span>
+                                        
+                                            <span class="post-category">&#x5206;&#x7C7B;:
+                                
+                                <a href="https://yangcongs.github.io/tag/LNg4AQb87/">VB.NET</a>
+                                
+                            </span>
+                                            
+                                                阅读量:
+                                                <span data-hk-page="current"> - </span>
+                                                
+                                    </div>
+                                    
+                        </header>
+                        
+                        <div class="post-content">
+                            <p>找到了几种在VB.NET中调用CMD命令行的方法。<br>
+第一种：</p>
+<pre><code class="language-xml">shell(&quot;copy /b jmdcw.jpg+jmdcw.rar jmdcw1.jpg&quot;,0)
+</code></pre>
+<p>第二种：</p>
+<pre><code class="language-xml">Shell(&quot;cmd.exe /c copy /b jmdcw.jpg+jmdcw.rar jmdcw1.jpg&quot;)
+</code></pre>
+<p>第三种：</p>
+<pre><code class="language-xml">Dim p As new Process()
+p.StartInfo.FileName = &quot;cmd.exe&quot;
+p.StartInfo.UseShellExecute = False '关闭Shell的使用
+p.StartInfo.RedirectStandardInput = True '重定向标准输入
+p.StartInfo.RedirectStandardOutput = True '重定向标准输出
+p.StartInfo.RedirectStandardError = True '重定向错误输出
+p.StartInfo.CreateNoWindow = True '设置不显示窗口
+p.Start()
+p.StandardInput.WriteLine( &quot;copy /b jmdcw.jpg+jmdcw.rar jmdcw1.jpg&quot;)
+p.StandardInput.WriteLine(&quot;exit&quot;)
+</code></pre>
+<p>其中第三种最好用，只需稍加修改，就可以实现让他先执行完cmd命令之后，再执行接下来的代码，如：</p>
+<pre><code class="language-xml">Sub _CMD(ByVal Data As String)
+ Try
+ Dim p As New Process()
+ p.StartInfo.FileName = &quot;cmd.exe&quot;
+ p.StartInfo.UseShellExecute = False
+ p.StartInfo.RedirectStandardInput = True
+ p.StartInfo.RedirectStandardOutput = True
+ p.StartInfo.RedirectStandardError = True
+ p.StartInfo.CreateNoWindow = True
+ p.Start()
+ Application.DoEvents()'  实现进程的同步，防止程序出现假死的状态
+ p.StandardInput.WriteLine(Data)’这个Data就是cmd命令
+ p.StandardInput.WriteLine(&quot;Exit&quot;)‘这个是退出语句
+ Dim strRst As String = p.StandardOutput.ReadToEnd()’执行完语句后取得显示内容.
+ p.Close()
+ Catch ex As Exception
+ End Try
+ ‘之后就可以添加需要执行完命令行才接着执行的代码了...
+End Sub
+</code></pre>
+
+                        </div>
+                        
+                            <div class="post-toc">
+                                
+                            </div>
+                            
+                                
+                                    
+                                            <!--zh-->
+                                            <section class="post-copyright zh">
+                                                <p class="copyright-item ">
+                                                    <span>&#x4F5C;&#x8005;:</span>
+                                                    <span>仓鼠屋</span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
+                                                    <span><a href="https://yangcongs.github.io/post/vbvnet-cmd/">https://yangcongs.github.io/post/vbvnet-cmd/</a></span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x534F;&#x8BAE;:</span>
+                                                    <span>MIT License</span>
+                                                </p>
+                                            </section>
+                                            
+                                                
+                                                    
+                                                                    <!--Share-->
+                                                                    <span style="margin-right:15px">
+                        <i class="post-share"></i>
+                        <span>&#x5206;&#x4EAB;:</span>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://yangcongs.github.io/post/vbvnet-cmd/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://yangcongs.github.io/post/vbvnet-cmd/&sharesource=qzone&title=VBV.NET调用CMD命令行&pics=https://yangcongs.github.io/images/avatar.png?v=1588207143627&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://yangcongs.github.io/post/vbvnet-cmd/&sharesource=weibo&title=VBV.NET调用CMD命令行 + " - " + &pic="https://yangcongs.github.io/images/avatar.png?v=1588207143627 "><i class="fa fa-weibo "></i></a>
+
+                                                                    </span>
+																	<!--zanzhu-->
+                                                                    
+                                                                            <!--zh-->
+                                                                            <section class="post-tags zh ">
+                                                                                <div>
+                                                                                    <span>&#x6807;&#x7B7E;:</span>
+                                                                                    <span class="tag ">
+                        
+                        
+                        <a href="https://yangcongs.github.io/tag/LNg4AQb87/">#
+                    VB.NET
+                        </a>
                         
                             
-                                
-                                    <section class="post-item">
-                                        <div class="content">
-                                            <a href="https://yangcongs.github.io/post/vbvnet-cmd/">
-                                                <h2 class="post-title">
-                                                    VBV.NET调用CMD命令行
-                                                </h2>
-                                            </a>
-                                            <div class="post-abstract">
-                                                
-                                            </div>
-                                            <div class="post-info">
-                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-04-30</span>
-                                                
-                                                    <span>
-        <i class="fa fa-tags" aria-hidden="true"></i>
-        
-        <a href="https://yangcongs.github.io/tag/LNg4AQb87/">
-          VB.NET
-          
-        </a>
-        
-      </span>
-                                                    
-                                            </div>
-                                        </div>
-                                        
-                                    </section>
-                                    
-                                        
-                                            
-                            
-                                
-                                    <section class="post-item">
-                                        <div class="content">
-                                            <a href="https://yangcongs.github.io/post/qianmianbanchaerji/">
-                                                <h2 class="post-title">
-                                                    台式机前面板插上耳机没声音的解决办法
-                                                </h2>
-                                            </a>
-                                            <div class="post-abstract">
-                                                <p>  前两天同事新装了系统，然后发现机箱前面板插上耳机之后无法识别，于是来找我咨询。</p>
-<p>  这个坑，几乎每一次重装win7都要踩一遍的，所以觉得还是记录一下比较好，下次有人遇到直接丢一个链接过去就能救急了。</p>
+                                </span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <a href="javascript:window.history.back();">
+                        &#x8FD4;&#x56DE;</a>
+                                                                                    <span>&dot;</span>
+                                                                                    <a href="#">&#x9876;&#x90E8;</a>
+                                                                                </div>
+                                                                            </section>
 
-                                            </div>
-                                            <div class="post-info">
-                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-04-28</span>
-                                                
-                                                    <span>
-        <i class="fa fa-tags" aria-hidden="true"></i>
-        
-        <a href="https://yangcongs.github.io/tag/t-VIZFyV0/">
-          Windows
-          
-        </a>
-        
-      </span>
-                                                    
-                                            </div>
-                                        </div>
-                                        
-                                    </section>
-                                    
-                                        
-                                            
-                            
-                                
-                                    <section class="post-item">
-                                        <div class="content">
-                                            <a href="https://yangcongs.github.io/post/excel-diyiliedizeng/">
-                                                <h2 class="post-title">
-                                                    【Excel-VBA】点击添加按钮，第一列字母递增
-                                                </h2>
-                                            </a>
-                                            <div class="post-abstract">
-                                                <p><a href="https://www.52pojie.cn/thread-1012274-1-1.html">吾爱</a>上有人提问，刚好有空就顺手写了一下，也搬回来以备后期使用。</p>
-
-                                            </div>
-                                            <div class="post-info">
-                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-04-25</span>
-                                                
-                                                    <span>
-        <i class="fa fa-tags" aria-hidden="true"></i>
-        
-        <a href="https://yangcongs.github.io/tag/rC0kpu7ku/">
-          VBA
-          
-          ,
-          
-        </a>
-        
-        <a href="https://yangcongs.github.io/tag/ZAM5SAOSj/">
-          Excel
-          
-        </a>
-        
-      </span>
-                                                    
-                                            </div>
-                                        </div>
-                                        
-                                    </section>
-                                    
-                                        
-                                            
-                            
-                                
-                                    <section class="post-item">
-                                        <div class="content">
-                                            <a href="https://yangcongs.github.io/post/Windows-pip-tool/">
-                                                <h2 class="post-title">
-                                                    PiP-Tool，一款可以让电脑的任意区域都实现置顶效果的软件（搬运）
-                                                </h2>
-                                            </a>
-                                            <div class="post-abstract">
-                                                <p>这次搬运来的这款软件只有一个功能：在电脑上实现画中画效果。</p>
-
-                                            </div>
-                                            <div class="post-info">
-                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-04-25</span>
-                                                
-                                                    <span>
-        <i class="fa fa-tags" aria-hidden="true"></i>
-        
-        <a href="https://yangcongs.github.io/tag/t-VIZFyV0/">
-          Windows
-          
-        </a>
-        
-      </span>
-                                                    
-                                            </div>
-                                        </div>
-                                        
-                                    </section>
-                                    
-                                        
-                                            
-                            
-                                
-                                    <section class="post-item">
-                                        <div class="content">
-                                            <a href="https://yangcongs.github.io/post/vbnet-yuanchengguanji/">
-                                                <h2 class="post-title">
-                                                    【VB.NET】远程关机工具（基于腾讯文档，可自行修改）
-                                                </h2>
-                                            </a>
-                                            <div class="post-abstract">
-                                                <p>本来是发表在吾爱的帖子，既然有了自己的小窝，还是搬回来一份好了</p>
-
-                                            </div>
-                                            <div class="post-info">
-                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-04-24</span>
-                                                
-                                                    <span>
-        <i class="fa fa-tags" aria-hidden="true"></i>
-        
-        <a href="https://yangcongs.github.io/tag/LNg4AQb87/">
-          VB.NET
-          
-        </a>
-        
-      </span>
-                                                    
-                                            </div>
-                                        </div>
-                                        
-                                    </section>
-                                    
-                                        
-                                            
-                            
-                                
-                                    <section class="post-item">
-                                        <div class="content">
-                                            <a href="https://yangcongs.github.io/post/markdown-yufadaquan/">
-                                                <h2 class="post-title">
-                                                    Markdown语法大全(超级版)（搬运）
-                                                </h2>
-                                            </a>
-                                            <div class="post-abstract">
-                                                <p>本文转载自<a href="https://www.jianshu.com/p/ebe52d2d468f#fnref2">简书</a>，著作权归作者<a href="https://www.jianshu.com/u/16d77399d3a7">择势勤</a>所有。</p>
-
-                                            </div>
-                                            <div class="post-info">
-                                                <span><i class="fa fa-calendar" aria-hidden="true"></i> 2020-04-24</span>
-                                                
-                                                    <span>
-        <i class="fa fa-tags" aria-hidden="true"></i>
-        
-        <a href="https://yangcongs.github.io/tag/AoRn7akFY/">
-          Markdown
-          
-        </a>
-        
-      </span>
-                                                    
-                                            </div>
-                                        </div>
-                                        
-                                            <a href="https://yangcongs.github.io/post/markdown-yufadaquan/">
-    <div class="feature-container" style="background-image: url('https://yangcongs.github.io/post-images/markdown-yufadaquan.jpg')">
-    </div>
-  </a>
-                                            
-                                    </section>
-                                    
-                                        
-                                            
-                            
-                                            
-                            
-                                            
+                                                                            
+                                                                                <!---->
+                                                                                <section class="post-nav">
+                                                                                    
+                                                                                            
+                                                                                                <a class="next" rel="next" href="https://yangcongs.github.io/post/qianmianbanchaerji/">
+                                                                                                    台式机前面板插上耳机没声音的解决办法
+                                                                                                </a>
+                                                                                                
+                                                                                </section>
+                    </article>
                 </div>
+                
+                    
+                        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container" style="width: 100%;max-width: 780px;margin: auto;"></div>
+
+<script>
+    var gitalk = new Gitalk({
+        clientID: '5eeddde6e4d8de165c5e',
+        clientSecret: '4fd4305c9811f2e541df17ea2745686d8b62ff59',
+        repo: 'yangcongs.github.io',
+        owner: 'yangcongs',
+        admin: ['yangcongs'],
+        id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
+        distractionFreeMode: false // Facebook-like distraction free mode
+    })
+
+    gitalk.render('gitalk-container')
+</script>
+                            
+                                        
+                                            
             </div>
+    </div>
+    </div>
     </div>
     
         <footer id="footer" class="footer">
@@ -480,6 +404,10 @@
                     console.log("\n %c \u26a1Theme:Chic Author's Blog:https://blog.itjoker.cn  Write By ITJoker  \n\n", "color: #ffffff; background: rgba(49, 49, 49, 0.85); padding:5px 0;border-radius:5px;");
                 </script>
                 
+        </div>
 </body>
+<script>
+    scroll();
+</script>
 
 </html>
