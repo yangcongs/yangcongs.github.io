@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yangcongs.github.io</id>
     <title>仓鼠屋</title>
-    <updated>2020-04-30T00:39:16.363Z</updated>
+    <updated>2020-08-31T02:59:02.674Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yangcongs.github.io"/>
     <link rel="self" href="https://yangcongs.github.io/atom.xml"/>
@@ -10,6 +10,25 @@
     <logo>https://yangcongs.github.io/images/avatar.png</logo>
     <icon>https://yangcongs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 仓鼠屋</rights>
+    <entry>
+        <title type="html"><![CDATA[安装过低版本的solidworks破解激活不成功解决办法（搬运）]]></title>
+        <id>https://yangcongs.github.io/post/an-zhuang-guo-di-ban-ben-de-solidworks-po-jie-ji-huo-bu-cheng-gong-jie-jue-ban-fa/</id>
+        <link href="https://yangcongs.github.io/post/an-zhuang-guo-di-ban-ben-de-solidworks-po-jie-ji-huo-bu-cheng-gong-jie-jue-ban-fa/">
+        </link>
+        <updated>2020-08-31T02:36:51.000Z</updated>
+        <summary type="html"><![CDATA[<p>本文转载自<a href="http://xifengboke.com/post/168.html">溪风博客</a>，著作权归作者<a href="http://xifengboke.com/author-1.html">溪风博客</a>所有。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>本文转载自<a href="http://xifengboke.com/post/168.html">溪风博客</a>，著作权归作者<a href="http://xifengboke.com/author-1.html">溪风博客</a>所有。</p>
+<!-- more -->
+<p>我们在安装solidworks的时候最后一步就是破解，破解往往我们按照正常的破解文件破解了，打开solidworks时还是会提示验证许可证失败，无法激活，30天的试用期，还有一种情况就是正常使用solidworks忽然有一天无法使用，显示需要重新注册，但是重新破解还是不能使用，依然显示需重新注册。这个原因其实就是破解不成功所致，下面提供大家一个完美的解决办法，无须重新安装或者重装系统。</p>
+<p><font color=#EE1000 size=3>第一步：</font>将系统的隐藏文件显示出来（这个大家应该都知道的，就是查看--显示系统隐藏文件）；</p>
+<p><font color=#EE1000 size=3>第二步：</font>打开系统盘，一般都是C盘找到FLEXnet这个文件夹（C:\ProgramData\FLEXnet）；<br>
+<img src="https://yangcongs.github.io/post-images/1598841632536.jpg" alt="" loading="lazy"><br>
+<font color=#EE1000 size=3>第三步：</font>删除FLEXnet文件夹下的SW_D_00481b00_tsf.data_backup和SW_D_00481b00_tsf.data两个文件，其中SW_D_00481b00_tsf.data是隐藏文件，如果不显示隐藏文件，而是直接搜索FLEXnet文件夹，就无法删掉它，这样还是无法破解。<br>
+<img src="https://yangcongs.github.io/post-images/1598841673797.jpg" alt="" loading="lazy"><br>
+<font color=#EE1000 size=3>第四步：</font>最后就是用原有的破解文件包再重新破解就可以了，和初始安装时一样。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[VBV.NET调用CMD命令行]]></title>
         <id>https://yangcongs.github.io/post/vbvnet-cmd/</id>

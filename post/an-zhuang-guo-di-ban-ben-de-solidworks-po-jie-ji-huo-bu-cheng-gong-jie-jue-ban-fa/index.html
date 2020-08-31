@@ -178,7 +178,7 @@
                     <article class="post-wrap">
                         <header class="post-header">
                             <h1 class="post-title">
-                                【VB.NET】远程关机工具（基于腾讯文档，可自行修改）
+                                安装过低版本的solidworks破解激活不成功解决办法（搬运）
                             </h1>
                             
                                     <!--zh-->
@@ -187,15 +187,17 @@
                                         <a itemprop="author" rel="author" href="/">
                                             仓鼠屋
                                         </a>
-                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-04-24</a></span>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2020-08-31</a></span>
                                         <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">4.1
+                                    href="#">1.1
                                     &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">1121</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">329</a></span>
                                         
                                             <span class="post-category">&#x5206;&#x7C7B;:
                                 
-                                <a href="https://yangcongs.github.io/tag/LNg4AQb87/">VB.NET</a>
+                                <a href="https://yangcongs.github.io/tag/wjxdskQqU/">SolidWorks</a>
+                                
+                                <a href="https://yangcongs.github.io/tag/t-VIZFyV0/">Windows</a>
                                 
                             </span>
                                             
@@ -207,90 +209,20 @@
                         </header>
                         
                         <div class="post-content">
-                            <p>本来是发表在吾爱的帖子，既然有了自己的小窝，还是搬回来一份好了</p>
+                            <p>本文转载自<a href="http://xifengboke.com/post/168.html">溪风博客</a>，著作权归作者<a href="http://xifengboke.com/author-1.html">溪风博客</a>所有。</p>
 <!-- more -->
-<hr>
-<h1 id="背景">背景</h1>
-<p>因为工作需要，经常两个办公室跑，两个办公室离得还有点远<br>
-下了班还要两头跑着关电脑，感觉很麻烦<br>
-所以想找一个远程关机的小程序<br>
-论坛搜索出了很多大神的作品</p>
-<h1 id="比如">比如：</h1>
-<p><a href="https://www.52pojie.cn/thread-994803-1-1.html">夕风远程关机工具V1.1 ， 可实现远程关机、定时关机、取消关机</a> （基于有道云）<br>
-<a href="https://www.52pojie.cn/thread-853364-1-1.html">通过网易云歌单 远程关机</a> （基于网易云）<br>
-<a href="https://www.52pojie.cn/thread-447688-1-1.html">远程关机工具--ReShutDown--【VB源码】</a> （基于贴吧）</p>
-<h1 id="等等">等等</h1>
-<p>但是跟我预期的有点差别<br>
-有道云和网易云我平时用的不多，为了远程关机再去多用一个软件什么的觉得有点麻烦了<br>
-至于基于贴吧的，首先要有一个自己的贴吧，然后我觉得楼主自己都被坑了，一不小心被别人关机，很心塞，</p>
-<p>然后就想着干脆自己写一个好了，刚好自己知道一点点VB，于是本作品就诞生了</p>
-<h1 id="过程">过程</h1>
-<p>因为我平时TIM用的比较多，TIM上又内置的有腾讯文档，所以本程序是基于腾讯文档制作的</p>
-<p>本来看到@yswqq2008 开源了自己的程序，有一点点小激动，想着改一下网站什么的就好了<br>
-但是结果啪啪啪打脸，大佬的软件是通过读取网页源码来找到指令的<br>
-不过这些个云文档的网页源码里并没有加载出文档内容，他们好像是二次加载（这么描述大佬应该懂我的意思吧）出来的</p>
-<p>由于我不懂怎么去爬数据，所以直接获取网页源码并不能获取到指令<br>
-@fantastic 和 @xiyuboy 两位大佬应该是会的，但是我请教@fantastic并没有收到回复<br>
-郁闷了好几天，灵光一闪，何不利用WebBrowser控件把网页加载进form<br>
-然后网页到了自己的地盘不是想怎么盘怎么盘</p>
-<h3 id="下面是本程序获取远端指令的代码">下面是本程序获取远端指令的代码：</h3>
-<pre><code class="language-xml">If (WebBrowser1.Document IsNot Nothing) Then
-    Dim Elems As HtmlElementCollection
-    Dim WebOC As WebBrowser = WebBrowser1
-    Elems = WebOC.Document.GetElementsByTagName(&quot;div&quot;) '取出源码中所有div
-    For Each elem As HtmlElement In Elems
-        Dim NameStr As String = elem.GetAttribute(&quot;id&quot;) '取出div中所有id
-        If ((NameStr IsNot Nothing) And (NameStr.Length &lt;&gt; 0)) Then
-            Dim leftString = Mid(NameStr, 1, 10) '取id前面10位数
-            If leftString.ToLower().Equals(&quot;magicdomid&quot;) Then
-                Dim ContentStr = WebOC.Document.GetElementById(NameStr).InnerText '读取当前指令
-                If ContentStr &lt;&gt; &quot;&quot; Then
-                    MessageBox.Show(&quot;当前远端指令为：&quot; + ContentStr)
-                End If
-            End If
-        End If
-    Next
-End If
-</code></pre>
-<p>下面是以上代码中所需网页元素的查找示意图：<br>
-<img src="https://attach.52pojie.cn/forum/201908/01/141811qudcrxux50u6rusc.png" alt="示意图" title="示意图" loading="lazy"></p>
-<p>本程序中需要的id“magicdomid2”每次修改文本内容后，数字后缀都会动态改变，刷新网页又会恢复成“magicdomid2”<br>
-所以我取出所有的id为“magicdomid”的文本内容加以对比，然后筛选出自己需要的文本</p>
-<p><mark>我觉得这个代码是万金油</mark>，可以抓取不同网站二次加载的数据，</p>
-<p>打开你需要抓取数据的网页，按F12查看源码，根据需要按以下规则改写代码，就可以抓取该网页的对应内容了</p>
-<p>先通过WebOC.Document.GetElementsByTagName(&quot;头文件&quot;) 筛选出源码中所有拥有相同头文件（大概是这个名字吧，就是代码前面的紫色文本）的代码</p>
-<p>然后使用GetAttribute(&quot;id&quot;)取出该“id”等号后的内容（此处的“id”可以是所有等号前的橙色文本）</p>
-<p>如果需要取出该“id”下的文本内容就使用WebOC.Document.GetElementById(NameStr).InnerText（此处的“id”必须是如图中该文本的“id”）</p>
-<h1 id="结果">结果</h1>
-<p>下面贴一下我简陋的界面：<br>
-<img src="https://attach.52pojie.cn/forum/201908/01/113839qpd7cidycbk8gdj8.png" alt="软件界面" title="软件界面" loading="lazy"></p>
-<p>其中：<br>
-“监控网址”就是你作为远程控制的文档分享链接<br>
-“监控时间间隔“是每隔多久检测一次文档内指令<br>
-“预设指令就是文档中你设置的用来关机的指令</p>
-<p>由于我只需要关机这一个功能，所以暂时只写了关机指令，<br>
-如有需要其他功能的，请拿去自行添加</p>
-<p><a href="http://t.cn/AiYqo63J">程序连接</a><br>
-解压后打开exe文件，输入腾讯文档分享链接即可使用</p>
-<p>下面直接上<a href="http://t.cn/AiYbgxti">源码</a>，各位大神别嫌弃</p>
-<p>如需转载，请注明出处！</p>
+<p>我们在安装solidworks的时候最后一步就是破解，破解往往我们按照正常的破解文件破解了，打开solidworks时还是会提示验证许可证失败，无法激活，30天的试用期，还有一种情况就是正常使用solidworks忽然有一天无法使用，显示需要重新注册，但是重新破解还是不能使用，依然显示需重新注册。这个原因其实就是破解不成功所致，下面提供大家一个完美的解决办法，无须重新安装或者重装系统。</p>
+<p><font color=#EE1000 size=3>第一步：</font>将系统的隐藏文件显示出来（这个大家应该都知道的，就是查看--显示系统隐藏文件）；</p>
+<p><font color=#EE1000 size=3>第二步：</font>打开系统盘，一般都是C盘找到FLEXnet这个文件夹（C:\ProgramData\FLEXnet）；<br>
+<img src="https://yangcongs.github.io/post-images/1598841632536.jpg" alt="" loading="lazy"><br>
+<font color=#EE1000 size=3>第三步：</font>删除FLEXnet文件夹下的SW_D_00481b00_tsf.data_backup和SW_D_00481b00_tsf.data两个文件，其中SW_D_00481b00_tsf.data是隐藏文件，如果不显示隐藏文件，而是直接搜索FLEXnet文件夹，就无法删掉它，这样还是无法破解。<br>
+<img src="https://yangcongs.github.io/post-images/1598841673797.jpg" alt="" loading="lazy"><br>
+<font color=#EE1000 size=3>第四步：</font>最后就是用原有的破解文件包再重新破解就可以了，和初始安装时一样。</p>
 
                         </div>
                         
                             <div class="post-toc">
-                                <ul class="markdownIt-TOC">
-<li><a href="#%E8%83%8C%E6%99%AF">背景</a></li>
-<li><a href="#%E6%AF%94%E5%A6%82">比如：</a></li>
-<li><a href="#%E7%AD%89%E7%AD%89">等等</a></li>
-<li><a href="#%E8%BF%87%E7%A8%8B">过程</a><br>
-*
-<ul>
-<li><a href="#%E4%B8%8B%E9%9D%A2%E6%98%AF%E6%9C%AC%E7%A8%8B%E5%BA%8F%E8%8E%B7%E5%8F%96%E8%BF%9C%E7%AB%AF%E6%8C%87%E4%BB%A4%E7%9A%84%E4%BB%A3%E7%A0%81">下面是本程序获取远端指令的代码：</a></li>
-</ul>
-</li>
-<li><a href="#%E7%BB%93%E6%9E%9C">结果</a></li>
-</ul>
-
+                                
                             </div>
                             
                                 
@@ -304,7 +236,7 @@ End If
 
                                                 <p class="copyright-item">
                                                     <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
-                                                    <span><a href="https://yangcongs.github.io/post/vbnet-yuanchengguanji/">https://yangcongs.github.io/post/vbnet-yuanchengguanji/</a></span>
+                                                    <span><a href="https://yangcongs.github.io/post/an-zhuang-guo-di-ban-ben-de-solidworks-po-jie-ji-huo-bu-cheng-gong-jie-jue-ban-fa/">https://yangcongs.github.io/post/an-zhuang-guo-di-ban-ben-de-solidworks-po-jie-ji-huo-bu-cheng-gong-jie-jue-ban-fa/</a></span>
                                                 </p>
 
                                                 <p class="copyright-item">
@@ -319,10 +251,10 @@ End If
                                                                     <span style="margin-right:15px">
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
-                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://yangcongs.github.io/post/vbnet-yuanchengguanji/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://yangcongs.github.io/post/vbnet-yuanchengguanji/&sharesource=qzone&title=【VB.NET】远程关机工具（基于腾讯文档，可自行修改）&pics=https://yangcongs.github.io/images/avatar.png?v=1598842697142&summary=&lt;p&gt;本来是发表在吾爱的帖子，既然有了自己的小窝，还是搬回来一份好了&lt;/p&gt;
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://yangcongs.github.io/post/an-zhuang-guo-di-ban-ben-de-solidworks-po-jie-ji-huo-bu-cheng-gong-jie-jue-ban-fa/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://yangcongs.github.io/post/an-zhuang-guo-di-ban-ben-de-solidworks-po-jie-ji-huo-bu-cheng-gong-jie-jue-ban-fa/&sharesource=qzone&title=安装过低版本的solidworks破解激活不成功解决办法（搬运）&pics=https://yangcongs.github.io/images/avatar.png?v=1598842697142&summary=&lt;p&gt;本文转载自&lt;a href=&#34;http://xifengboke.com/post/168.html&#34;&gt;溪风博客&lt;/a&gt;，著作权归作者&lt;a href=&#34;http://xifengboke.com/author-1.html&#34;&gt;溪风博客&lt;/a&gt;所有。&lt;/p&gt;
 "><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://yangcongs.github.io/post/vbnet-yuanchengguanji/&sharesource=weibo&title=【VB.NET】远程关机工具（基于腾讯文档，可自行修改） + " - " + &lt;p&gt;本来是发表在吾爱的帖子，既然有了自己的小窝，还是搬回来一份好了&lt;/p&gt;
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://yangcongs.github.io/post/an-zhuang-guo-di-ban-ben-de-solidworks-po-jie-ji-huo-bu-cheng-gong-jie-jue-ban-fa/&sharesource=weibo&title=安装过低版本的solidworks破解激活不成功解决办法（搬运） + " - " + &lt;p&gt;本文转载自&lt;a href=&#34;http://xifengboke.com/post/168.html&#34;&gt;溪风博客&lt;/a&gt;，著作权归作者&lt;a href=&#34;http://xifengboke.com/author-1.html&#34;&gt;溪风博客&lt;/a&gt;所有。&lt;/p&gt;
 &pic="https://yangcongs.github.io/images/avatar.png?v=1598842697142 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
@@ -335,8 +267,12 @@ End If
                                                                                     <span class="tag ">
                         
                         
-                        <a href="https://yangcongs.github.io/tag/LNg4AQb87/">#
-                    VB.NET
+                        <a href="https://yangcongs.github.io/tag/wjxdskQqU/">#
+                    SolidWorks
+                        </a>
+                        
+                        <a href="https://yangcongs.github.io/tag/t-VIZFyV0/">#
+                    Windows
                         </a>
                         
                             
@@ -354,13 +290,9 @@ End If
                                                                                 <!---->
                                                                                 <section class="post-nav">
                                                                                     
-                                                                                        <a class="prev" rel="prev" href="https://yangcongs.github.io/post/Windows-pip-tool/">
-                                                                                            PiP-Tool，一款可以让电脑的任意区域都实现置顶效果的软件（搬运）
-                                                                                        </a>
-                                                                                        
                                                                                             
-                                                                                                <a class="next" rel="next" href="https://yangcongs.github.io/post/markdown-yufadaquan/">
-                                                                                                    Markdown语法大全(超级版)（搬运）
+                                                                                                <a class="next" rel="next" href="https://yangcongs.github.io/post/vbvnet-cmd/">
+                                                                                                    VBV.NET调用CMD命令行
                                                                                                 </a>
                                                                                                 
                                                                                 </section>
