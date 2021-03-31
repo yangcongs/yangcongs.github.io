@@ -2,14 +2,108 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yangcongs.github.io</id>
     <title>仓鼠屋</title>
-    <updated>2020-08-31T03:08:34.966Z</updated>
+    <updated>2021-03-31T06:09:39.434Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yangcongs.github.io"/>
     <link rel="self" href="https://yangcongs.github.io/atom.xml"/>
     <subtitle>就像一滴滑落的露珠再也回不到最初的花瓣，我们也回不到过去，曲终人散，谁无过错</subtitle>
     <logo>https://yangcongs.github.io/images/avatar.png</logo>
     <icon>https://yangcongs.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 仓鼠屋</rights>
+    <rights>All rights reserved 2021, 仓鼠屋</rights>
+    <entry>
+        <title type="html"><![CDATA[.bat批处理命令的一些简单用法]]></title>
+        <id>https://yangcongs.github.io/post/bat-pi-chu-li-ming-ling-de-yi-xie-jian-dan-yong-fa/</id>
+        <link href="https://yangcongs.github.io/post/bat-pi-chu-li-ming-ling-de-yi-xie-jian-dan-yong-fa/">
+        </link>
+        <updated>2021-03-31T02:25:28.000Z</updated>
+        <content type="html"><![CDATA[<!-- more -->
+<p><strong>说明</strong>：最近在对SolidWorks进行二次开发。<br>
+年前我们把SolidWorks从2018版升级到了2020版，然后我之前基于VBA做的宏插件使用起来体验越来越差，出图的时候经常卡顿，效率很是低下。<br>
+刚好最近该忙的都忙得差不多了，就写上一款基于VB.NET的插件，直接生成.dll文件注入SolidWorks<br>
+插件注册的时候需要利用命令行使用regasm.exe注册，所以每次给别人用都需要自己上手去帮别人注册，干脆再写一个傻瓜式的批处理，谁都可以用</p>
+<h2 id="先贴上代码">先贴上代码：</h2>
+<pre><code class="language-xml">@echo off
+echo 1、注册插件
+echo 2、注销插件
+set /p i=输入数字后回车：
+if %i%==1 goto Login
+if %i%==2 goto Logout
+:Login 
+ cd /d %cd%\
+ if exist C:\Windows\Microsoft.NET\Framework64\ (
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe /codebase SWPlugins.dll
+)  else (
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm.exe /codebase SWPlugins.dll
+)
+goto end 
+:Logout
+cd /d %cd%\ 
+if exist C:\Windows\Microsoft.NET\Framework64\ (
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe /U /codebase SWPlugins.dll
+)  else (
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm.exe /U /codebase SWPlugins.dll
+)
+:end 
+pause
+</code></pre>
+<h2 id="代码分成三个部分">代码分成三个部分：</h2>
+<h3 id="第一部分">第一部分：</h3>
+<pre><code class="language-xml">@echo off
+echo 1、注册插件
+echo 2、注销插件
+set /p i=输入数字后回车：
+</code></pre>
+<p>这一部分是给用户的提示内容：</p>
+<ul>
+<li><code>@</code>的意思是关闭紧跟其后的一条命令的回显</li>
+<li><code>echo off</code>的意思是关闭其他所有命令(不包括本身这条命令)的回显<br>
+(<code>echo on</code>则是显示下一条命令本身的回显)</li>
+<li><code>echo</code>的意思就是把这条命令后的内容显示到控制台上</li>
+<li><code>set /p i=输入数字后回车：</code>的意思就是设置一个外部读取的变量<code>i</code>,然后在控制台显示 <code>输入数字后回车：</code>，再接受用户输入的内容,以回车表示结束，赋值给变量<code>i</code></li>
+</ul>
+<p>这样在控制台界面显示的结果就是:<br>
+<img src="https://yangcongs.github.io/post-images/1617158747.jpg" alt="" loading="lazy"></p>
+<h3 id="第二部分">第二部分：</h3>
+<pre><code class="language-xml">if %i%==1 goto Login
+if %i%==2 goto Logout
+:Login 
+ cd /d %cd%\
+ if exist C:\Windows\Microsoft.NET\Framework64\ (
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe /codebase SWPlugins.dll
+)  else (
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm.exe /codebase SWPlugins.dll
+)
+goto end 
+:Logout
+cd /d %cd%\ 
+if exist C:\Windows\Microsoft.NET\Framework64\ (
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\regasm.exe /U /codebase SWPlugins.dll
+)  else (
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\regasm.exe /U /codebase SWPlugins.dll
+)
+:end 
+</code></pre>
+<p>这一部分是根据用户的输入内容选择要运行的函数：</p>
+<ul>
+<li>用户如果输入<code>1</code>就跳转到<code>Login</code></li>
+<li>用户如果输入<code>2</code>就跳转到<code>Logout</code></li>
+<li>另外，如果输入<code>1</code>运行完<code>Login</code>之后跳转到<code>end</code>，就不再运行<code>Logout</code>的内容</li>
+<li><code>cd /d %cd%\</code>意思就是直接切换到该.bat文件所在的文件夹</li>
+<li><code>if exist</code>判断紧跟在他后面的<code>C:\Windows\Microsoft.NET\Framework64\</code>文件夹是否存在，如果存在，说明该PC是64位的，就调用<code>C:\Windows\Microsoft.NET\Framework64\v4.0.30319\</code>文件夹下的<code>regasm.exe</code>进行注册，如果不存在就调用<code>C:\Windows\Microsoft.NET\Framework\v4.0.30319\</code>文件夹下的<code>regasm.exe</code>进行注册</li>
+<li><code>Logout</code>中的<code>/U</code>是注销的意思</li>
+</ul>
+<h3 id="第三部分">第三部分：</h3>
+<pre><code class="language-xml">pause 
+</code></pre>
+<p><code>pause</code>的意思是暂停批处理，以便于用户查看批处理结果，如果不加上命令运行完毕就直接退出了</p>
+<h2 id="一些补充">一些补充：</h2>
+<p>有个别电脑不能直接注册，必须把.dll文件放到<code>system32</code>文件夹下才行，这时候需要加上两句代码</p>
+<pre><code class="language-xml">copy SWPlugins.dll %SystemRoot%\system32
+copy solidworkstools.dll %SystemRoot%\system32
+</code></pre>
+<p>把文件复制到<code>system32</code>文件夹下</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[安装过低版本的solidworks破解激活不成功解决办法（搬运）]]></title>
         <id>https://yangcongs.github.io/post/an-zhuang-guo-di-ban-ben-de-solidworks-po-jie-ji-huo-bu-cheng-gong-jie-jue-ban-fa/</id>
