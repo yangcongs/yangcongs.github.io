@@ -175,33 +175,191 @@
 </script>
             <div class="main">
                 <div class="container">
-                    <div class="post-wrap archive">
-                        
+                    <article class="post-wrap">
+                        <header class="post-header">
+                            <h1 class="post-title">
+                                VBA读写ini 配置文件
+                            </h1>
                             
-                                <h3>
-                                    2018
-                                </h3>
+                                    <!--zh-->
+                                    <div class="post-meta zh">
+                                        &#x4F5C;&#x8005;:
+                                        <a itemprop="author" rel="author" href="/">
+                                            仓鼠屋
+                                        </a>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2021-08-11</a></span>
+                                        <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
+                                    href="#">1.1
+                                    &#x5206;&#x949F;</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">190</a></span>
+                                        
+                                            <span class="post-category">&#x5206;&#x7C7B;:
+                                
+                                <a href="https://yangcongs.github.io/tag/j01EB0b9H/">宏</a>
+                                
+                                <a href="https://yangcongs.github.io/tag/wjxdskQqU/">SolidWorks</a>
+                                
+                                <a href="https://yangcongs.github.io/tag/rC0kpu7ku/">VBA</a>
+                                
+                                <a href="https://yangcongs.github.io/tag/t-VIZFyV0/">Windows</a>
+                                
+                            </span>
+                                            
+                                                阅读量:
+                                                <span data-hk-page="current"> - </span>
+                                                
+                                    </div>
+                                    
+                        </header>
+                        
+                        <div class="post-content">
+                            <p><font color=#ea00ee size=3>此解决方案转载自<a href="https://www.cnblogs.com/luoye00/p/10625222.html">博客园</a>，著作权归作者<a href="https://home.cnblogs.com/u/luoye00/">tec2019</a>所有。</font></p>
+<p><font color=#EE1000 size=3>代码如下：</font></p>
+<pre><code class="language-xml">Option Explicit
+   'read
+   Private Declare Function GetPrivateProfileString Lib &quot;kernel32&quot; Alias &quot;GetPrivateProfileStringA&quot; _
+                 (ByVal lpApplicationName As String, _
+                   ByVal lpKeyName As String, _
+                   ByVal lpDefault As String, _
+                   ByVal lpReturnedString As String, _
+                   ByVal nSize As Long, _
+                   ByVal lpFileName As String) As Long
+   'write
+   Private Declare Function WritePrivateProfileString Lib &quot;kernel32&quot; Alias &quot;WritePrivateProfileStringA&quot; _
+                 (ByVal lpApplicationName As String, _
+                   ByVal lpKeyName As String, _
+                   ByVal lpString As String, _
+                   ByVal lpFileName As String) As Long
+ 
+Sub Read()
+    Dim Rec As String
+    Dim NC As Long
+
+    Rec = String(255, 0)
+    NC = GetPrivateProfileString(&quot;BOOT&quot;, &quot;Shell&quot;, &quot;&quot;, Rec, 255, &quot;D:\test.ini&quot;)
+    MsgBox Rec
+End Sub
+
+Sub WriteProfile()
+    Dim NC As Long
+    
+    NC = WritePrivateProfileString(&quot;BOOT&quot;, &quot;Shell&quot;, &quot;Test1&quot;, &quot;D:\test.ini&quot;)
+End Sub
+</code></pre>
+<p><font color=#EE1000 size=3>注：</font><br>
+如果是64位系统，则需要在Delcare后面增加PtrSafe关键字，否则会报错</p>
+
+                        </div>
+                        
+                            <div class="post-toc">
+                                
+                            </div>
+                            
                                 
                                     
+                                            <!--zh-->
+                                            <section class="post-copyright zh">
+                                                <p class="copyright-item ">
+                                                    <span>&#x4F5C;&#x8005;:</span>
+                                                    <span>仓鼠屋</span>
+                                                </p>
 
-                                        <article class="archive-item">
-                                            <a class="archive-item-link" href="https://yangcongs.github.io/post/hello-gridea/">
-                                                Hello Gridea
-                                            </a>
-                                            <span class="archive-item-date">2018-12-12 </span>
-                                        </article>
-                                        
+                                                <p class="copyright-item">
+                                                    <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
+                                                    <span><a href="https://yangcongs.github.io/post/vba_ini/">https://yangcongs.github.io/post/vba_ini/</a></span>
+                                                </p>
+
+                                                <p class="copyright-item">
+                                                    <span>&#x534F;&#x8BAE;:</span>
+                                                    <span>MIT License</span>
+                                                </p>
+                                            </section>
                                             
                                                 
-                    </div>
-                    <div class="pagination-container">
+                                                    
+                                                                    <!--Share-->
+                                                                    <span style="margin-right:15px">
+                        <i class="post-share"></i>
+                        <span>&#x5206;&#x4EAB;:</span>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://yangcongs.github.io/post/vba_ini/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://yangcongs.github.io/post/vba_ini/&sharesource=qzone&title=VBA读写ini 配置文件&pics=https://yangcongs.github.io/images/avatar.png?v=1628640890628&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://yangcongs.github.io/post/vba_ini/&sharesource=weibo&title=VBA读写ini 配置文件 + " - " + &pic="https://yangcongs.github.io/images/avatar.png?v=1628640890628 "><i class="fa fa-weibo "></i></a>
+
+                                                                    </span>
+																	<!--zanzhu-->
+                                                                    
+                                                                            <!--zh-->
+                                                                            <section class="post-tags zh ">
+                                                                                <div>
+                                                                                    <span>&#x6807;&#x7B7E;:</span>
+                                                                                    <span class="tag ">
+                        
+                        
+                        <a href="https://yangcongs.github.io/tag/j01EB0b9H/">#
+                    宏
+                        </a>
+                        
+                        <a href="https://yangcongs.github.io/tag/wjxdskQqU/">#
+                    SolidWorks
+                        </a>
+                        
+                        <a href="https://yangcongs.github.io/tag/rC0kpu7ku/">#
+                    VBA
+                        </a>
+                        
+                        <a href="https://yangcongs.github.io/tag/t-VIZFyV0/">#
+                    Windows
+                        </a>
                         
                             
-                                    
-                                            
-                    </div>
+                                </span>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <a href="javascript:window.history.back();">
+                        &#x8FD4;&#x56DE;</a>
+                                                                                    <span>&dot;</span>
+                                                                                    <a href="#">&#x9876;&#x90E8;</a>
+                                                                                </div>
+                                                                            </section>
+
+                                                                            
+                                                                                <!---->
+                                                                                <section class="post-nav">
+                                                                                    
+                                                                                            
+                                                                                                <a class="next" rel="next" href="https://yangcongs.github.io/post/Win_dyj/">
+                                                                                                    局域网打印机不能正常工作的解决办法
+                                                                                                </a>
+                                                                                                
+                                                                                </section>
+                    </article>
                 </div>
+                
+                    
+                        <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container" style="width: 100%;max-width: 780px;margin: auto;"></div>
+
+<script>
+    var gitalk = new Gitalk({
+        clientID: '5eeddde6e4d8de165c5e',
+        clientSecret: '4fd4305c9811f2e541df17ea2745686d8b62ff59',
+        repo: 'yangcongs.github.io',
+        owner: 'yangcongs',
+        admin: ['yangcongs'],
+        id: (location.pathname).substring(0, 49), // Ensure uniqueness and length less than 50
+        distractionFreeMode: false // Facebook-like distraction free mode
+    })
+
+    gitalk.render('gitalk-container')
+</script>
+                            
+                                        
+                                            
             </div>
+    </div>
+    </div>
     </div>
     
         <footer id="footer" class="footer">
@@ -261,5 +419,8 @@
                 
         </div>
 </body>
+<script>
+    scroll();
+</script>
 
 </html>
