@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yangcongs.github.io</id>
     <title>仓鼠屋</title>
-    <updated>2021-08-11T00:15:23.963Z</updated>
+    <updated>2021-11-19T04:20:39.637Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yangcongs.github.io"/>
     <link rel="self" href="https://yangcongs.github.io/atom.xml"/>
@@ -10,6 +10,23 @@
     <logo>https://yangcongs.github.io/images/avatar.png</logo>
     <icon>https://yangcongs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, 仓鼠屋</rights>
+    <entry>
+        <title type="html"><![CDATA[SOLIDOWRKS 工程图线框模式下显示贴图的方法]]></title>
+        <id>https://yangcongs.github.io/post/solidowrks-gong-cheng-tu-xian-kuang-mo-shi-xia-xian-shi-tie-tu-de-fang-fa/</id>
+        <link href="https://yangcongs.github.io/post/solidowrks-gong-cheng-tu-xian-kuang-mo-shi-xia-xian-shi-tie-tu-de-fang-fa/">
+        </link>
+        <updated>2021-11-19T04:04:39.000Z</updated>
+        <content type="html"><![CDATA[<p><font color=#ea00ee size=3>此方案转载自<a href="https://zhuanlan.zhihu.com/p/377966921">知乎</a>，著作权归作者<a href="https://www.zhihu.com/people/zhi-wang-jun">SOLIDWORKS智网</a>所有。</font></p>
+<p>应用场景</p>
+<p>工程师经常在3D模型上贴图，如果要在3D模型上直接采用贴图，则工程图需要在上色模式下才能显示贴图，现要求在工程图的线框模型就要显示出图片。要实现这一场景则需要在3D模型草图上贴上图片，方法如下：</p>
+<p>一、3D贴图</p>
+<p>在3D模型种，进入草图编辑状态，然后点击菜单【工具】-【草图工具】-【草图图片】，在弹出的窗口种浏览到图片，插入其中。调整草图的位置和大小，调整草图的透明度。<br>
+<img src="https://yangcongs.github.io/post-images/1637295070.jpg" alt="" loading="lazy"></p>
+<p>二、工程图设置</p>
+<p>在对应的工程图中，我们可以通过改变过视图模型中草图的【显示\隐藏】来显示或者隐藏图片。<br>
+<img src="https://yangcongs.github.io/post-images/1637295552.jpg" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[VBA读写ini 配置文件]]></title>
         <id>https://yangcongs.github.io/post/vba_ini/</id>
@@ -433,83 +450,6 @@ End Sub
 解决办法是你不要最小化，直接用别的软件窗口来覆盖这个浏览器的窗口，或者换一个影视网站。（多谢@瑪奇 提醒）</p>
 <p><a href="https://github.com/LionelJouin/PiP-Tool">GitHub地址</a><br>
 <a href="http://t.cn/AienEMHG">安装包地址</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【VB.NET】远程关机工具（基于腾讯文档，可自行修改）]]></title>
-        <id>https://yangcongs.github.io/post/vbnet-yuanchengguanji/</id>
-        <link href="https://yangcongs.github.io/post/vbnet-yuanchengguanji/">
-        </link>
-        <updated>2020-04-24T12:30:32.000Z</updated>
-        <summary type="html"><![CDATA[<p>本来是发表在吾爱的帖子，既然有了自己的小窝，还是搬回来一份好了</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>本来是发表在吾爱的帖子，既然有了自己的小窝，还是搬回来一份好了</p>
-<!-- more -->
-<hr>
-<h1 id="背景">背景</h1>
-<p>因为工作需要，经常两个办公室跑，两个办公室离得还有点远<br>
-下了班还要两头跑着关电脑，感觉很麻烦<br>
-所以想找一个远程关机的小程序<br>
-论坛搜索出了很多大神的作品</p>
-<h1 id="比如">比如：</h1>
-<p><a href="https://www.52pojie.cn/thread-994803-1-1.html">夕风远程关机工具V1.1 ， 可实现远程关机、定时关机、取消关机</a> （基于有道云）<br>
-<a href="https://www.52pojie.cn/thread-853364-1-1.html">通过网易云歌单 远程关机</a> （基于网易云）<br>
-<a href="https://www.52pojie.cn/thread-447688-1-1.html">远程关机工具--ReShutDown--【VB源码】</a> （基于贴吧）</p>
-<h1 id="等等">等等</h1>
-<p>但是跟我预期的有点差别<br>
-有道云和网易云我平时用的不多，为了远程关机再去多用一个软件什么的觉得有点麻烦了<br>
-至于基于贴吧的，首先要有一个自己的贴吧，然后我觉得楼主自己都被坑了，一不小心被别人关机，很心塞，</p>
-<p>然后就想着干脆自己写一个好了，刚好自己知道一点点VB，于是本作品就诞生了</p>
-<h1 id="过程">过程</h1>
-<p>因为我平时TIM用的比较多，TIM上又内置的有腾讯文档，所以本程序是基于腾讯文档制作的</p>
-<p>本来看到@yswqq2008 开源了自己的程序，有一点点小激动，想着改一下网站什么的就好了<br>
-但是结果啪啪啪打脸，大佬的软件是通过读取网页源码来找到指令的<br>
-不过这些个云文档的网页源码里并没有加载出文档内容，他们好像是二次加载（这么描述大佬应该懂我的意思吧）出来的</p>
-<p>由于我不懂怎么去爬数据，所以直接获取网页源码并不能获取到指令<br>
-@fantastic 和 @xiyuboy 两位大佬应该是会的，但是我请教@fantastic并没有收到回复<br>
-郁闷了好几天，灵光一闪，何不利用WebBrowser控件把网页加载进form<br>
-然后网页到了自己的地盘不是想怎么盘怎么盘</p>
-<h3 id="下面是本程序获取远端指令的代码">下面是本程序获取远端指令的代码：</h3>
-<pre><code class="language-xml">If (WebBrowser1.Document IsNot Nothing) Then
-    Dim Elems As HtmlElementCollection
-    Dim WebOC As WebBrowser = WebBrowser1
-    Elems = WebOC.Document.GetElementsByTagName(&quot;div&quot;) '取出源码中所有div
-    For Each elem As HtmlElement In Elems
-        Dim NameStr As String = elem.GetAttribute(&quot;id&quot;) '取出div中所有id
-        If ((NameStr IsNot Nothing) And (NameStr.Length &lt;&gt; 0)) Then
-            Dim leftString = Mid(NameStr, 1, 10) '取id前面10位数
-            If leftString.ToLower().Equals(&quot;magicdomid&quot;) Then
-                Dim ContentStr = WebOC.Document.GetElementById(NameStr).InnerText '读取当前指令
-                If ContentStr &lt;&gt; &quot;&quot; Then
-                    MessageBox.Show(&quot;当前远端指令为：&quot; + ContentStr)
-                End If
-            End If
-        End If
-    Next
-End If
-</code></pre>
-<p>下面是以上代码中所需网页元素的查找示意图：<br>
-<img src="https://attach.52pojie.cn/forum/201908/01/141811qudcrxux50u6rusc.png" alt="示意图" title="示意图" loading="lazy"></p>
-<p>本程序中需要的id“magicdomid2”每次修改文本内容后，数字后缀都会动态改变，刷新网页又会恢复成“magicdomid2”<br>
-所以我取出所有的id为“magicdomid”的文本内容加以对比，然后筛选出自己需要的文本</p>
-<p><mark>我觉得这个代码是万金油</mark>，可以抓取不同网站二次加载的数据，</p>
-<p>打开你需要抓取数据的网页，按F12查看源码，根据需要按以下规则改写代码，就可以抓取该网页的对应内容了</p>
-<p>先通过WebOC.Document.GetElementsByTagName(&quot;头文件&quot;) 筛选出源码中所有拥有相同头文件（大概是这个名字吧，就是代码前面的紫色文本）的代码</p>
-<p>然后使用GetAttribute(&quot;id&quot;)取出该“id”等号后的内容（此处的“id”可以是所有等号前的橙色文本）</p>
-<p>如果需要取出该“id”下的文本内容就使用WebOC.Document.GetElementById(NameStr).InnerText（此处的“id”必须是如图中该文本的“id”）</p>
-<h1 id="结果">结果</h1>
-<p>下面贴一下我简陋的界面：<br>
-<img src="https://attach.52pojie.cn/forum/201908/01/113839qpd7cidycbk8gdj8.png" alt="软件界面" title="软件界面" loading="lazy"></p>
-<p>其中：<br>
-“监控网址”就是你作为远程控制的文档分享链接<br>
-“监控时间间隔“是每隔多久检测一次文档内指令<br>
-“预设指令就是文档中你设置的用来关机的指令</p>
-<p>由于我只需要关机这一个功能，所以暂时只写了关机指令，<br>
-如有需要其他功能的，请拿去自行添加</p>
-<p><a href="http://t.cn/AiYqo63J">程序连接</a><br>
-解压后打开exe文件，输入腾讯文档分享链接即可使用</p>
-<p>下面直接上<a href="http://t.cn/AiYbgxti">源码</a>，各位大神别嫌弃</p>
-<p>如需转载，请注明出处！</p>
 ]]></content>
     </entry>
 </feed>
