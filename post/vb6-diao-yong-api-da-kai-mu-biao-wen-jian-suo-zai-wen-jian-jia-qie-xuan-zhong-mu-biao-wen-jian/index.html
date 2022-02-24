@@ -178,7 +178,7 @@
                     <article class="post-wrap">
                         <header class="post-header">
                             <h1 class="post-title">
-                                Hello Gridea
+                                VB6调用API打开目标文件所在文件夹且选中目标文件
                             </h1>
                             
                                     <!--zh-->
@@ -187,18 +187,12 @@
                                         <a itemprop="author" rel="author" href="/">
                                             仓鼠屋
                                         </a>
-                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2018-12-12</a></span>
+                                        <span class="post-time">&#x65E5;&#x671F;: <a href="#">2021-11-25</a></span>
                                         <span class="post-readtime">&#x9605;&#x8BFB;&#x65F6;&#x95F4;:<a
-                                    href="#">1.0
+                                    href="#">2.6
                                     &#x5206;&#x949F;</a></span>
-                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">298</a></span>
+                                        <span class="post-words">&#x5B57;&#x6570;:<a href="#">490</a></span>
                                         
-                                            <span class="post-category">&#x5206;&#x7C7B;:
-                                
-                                <a href="https://yangcongs.github.io/tag/0SJ4PEmro/">Gridea</a>
-                                
-                            </span>
-                                            
                                                 阅读量:
                                                 <span data-hk-page="current"> - </span>
                                                 
@@ -206,42 +200,103 @@
                                     
                         </header>
                         
-                            <img class="post-feature-image" src="https://yangcongs.github.io/post-images/hello-gridea.png" alt="">
-                          
                         <div class="post-content">
-                            <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+                            <p><font color=#ea00ee size=3>此方案转载自<a href="https://blog.csdn.net/tanaya/article/details/5829838">CSDN</a>，著作权归作者<a href="https://blog.csdn.net/tanaya">唐古拉山</a>所有。</font></p>
+<pre><code class="language-xml">Option Explicit
+
+' 模块名称: mOpenFolderAndSetFileFocus
+'     作者: 唐细刚
+'     时间: 2010-08-22
+'     功能: VB6调用API打开目标文件所在文件夹且选中目标文件
+' 注：
+' 由于调用 Explorer.exe /select 方式会使系统产生多余的 Explorer.exe 进程
+' 所以还是API来实现较好，速度也有优势，不知道是否低碳? O(∩_∩)O~
+
+Private Declare Function SHCreateFromPath Lib &quot;Shell32&quot; Alias &quot;ILCreateFromPathA&quot; (ByVal lpFileName As String) As Long
+Private Declare Sub SHFree Lib &quot;Shell32&quot; Alias &quot;ILFree&quot; (ByVal lngPidl As Long)
+Private Declare Function SHOpenFolderAndSelectItems Lib &quot;Shell32&quot; ( _
+        ByVal pidlFolder As Long, _
+        ByVal cidl As Long, _
+        ByVal apidl As Long, _
+        ByVal dwFlags As Long) As Long
+
+'增加判断文件是否存在
+Private Const INVALID_HANDLE_VALUE = -1
+Private Const MAX_PATH = 260
+
+Private Type FILETIME
+    dwLowDateTime As Long
+    dwHighDateTime As Long
+End Type
+
+Private Type WIN32_FIND_DATA
+    dwFileAttributes As Long
+    ftCreationTime As FILETIME
+    ftLastAccessTime As FILETIME
+    ftLastWriteTime As FILETIME
+    nFileSizeHigh As Long
+    nFileSizeLow As Long
+    dwReserved0 As Long
+    dwReserved1 As Long
+    cFileName As String * MAX_PATH
+    cAlternate As String * 14
+End Type
+
+Private Declare Function FindFirstFile Lib &quot;kernel32&quot; Alias &quot;FindFirstFileA&quot; ( _
+    ByVal lpFileName As String, _
+    lpFindFileData As WIN32_FIND_DATA) As Long
+
+Private Declare Function FindClose Lib &quot;kernel32&quot; (ByVal hFindFile As Long) As Long
+
+Private Function FileExists(ByVal lpFileName As String) As Boolean
+    Dim tpWFD As WIN32_FIND_DATA
+    Dim lngFile As Long
+    lngFile = FindFirstFile(lpFileName, tpWFD)
+    FileExists = lngFile &lt;&gt; INVALID_HANDLE_VALUE
+    If lngFile Then Call FindClose(lngFile)
+End Function
+
+'调用成功返回 True,否则返回 False
+Public Function OpenFolderAndSetFileFocus(ByVal lpFileName As String) As Boolean
+    On Error Resume Next
+    Dim lngPidl As Long
+    Dim lngRet  As Long
+    Dim strFile As String
+    strFile = Trim(lpFileName)
+    If FileExists(strFile) = False Then Exit Function
+    lngPidl = SHCreateFromPath(strFile &amp; vbNullChar)
+    If lngPidl &lt;&gt; 0 Then
+       lngRet = SHOpenFolderAndSelectItems(lngPidl, 0, 0, 0)
+       If lngRet = 0 Then
+          OpenFolderAndSetFileFocus = True
+       End If
+       Call SHFree(lngPidl)
+    End If
+End Function
+</code></pre>
+<p><font color=#EE1000 size=3>我在VB.NET上使用，修改代码如下：</font></p>
+<pre><code class="language-xml">'打开文件并选中指定文件
+   Private Declare Function SHCreateFromPath Lib &quot;shell32&quot; Alias &quot;ILCreateFromPathA&quot; (
+   ByVal lpFileName As String) As Long
+   Private Declare Function SHOpenFolderAndSelectItems Lib &quot;shell32&quot; (
+           ByVal pidlFolder As Long,
+           ByVal cidl As Long,
+           ByVal apidl As Long,
+           ByVal dwFlags As Long) As Long
+   Public Sub OpenFolderAndSetFileFocus(ByVal Folder As String)
+       Dim lngPidl As Long
+       lngPidl = SHCreateFromPath(Folder &amp; vbNullChar)
+       SHOpenFolderAndSelectItems(lngPidl, 0, 0, 0)
+   End Sub
+
+'调用
+   OpenFolderAndSetFileFocus(&quot;目标文件路径&quot;)
+</code></pre>
 
                         </div>
                         
                             <div class="post-toc">
-                                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E7%89%B9%E6%80%A7">特性👇</a></li>
-</ul>
-</li>
-</ul>
-
+                                
                             </div>
                             
                                 
@@ -255,7 +310,7 @@
 
                                                 <p class="copyright-item">
                                                     <span>&#x6C38;&#x4E45;&#x94FE;&#x63A5;:</span>
-                                                    <span><a href="https://yangcongs.github.io/post/hello-gridea/">https://yangcongs.github.io/post/hello-gridea/</a></span>
+                                                    <span><a href="https://yangcongs.github.io/post/vb6-diao-yong-api-da-kai-mu-biao-wen-jian-suo-zai-wen-jian-jia-qie-xuan-zhong-mu-biao-wen-jian/">https://yangcongs.github.io/post/vb6-diao-yong-api-da-kai-mu-biao-wen-jian-suo-zai-wen-jian-jia-qie-xuan-zhong-mu-biao-wen-jian/</a></span>
                                                 </p>
 
                                                 <p class="copyright-item">
@@ -270,13 +325,9 @@
                                                                     <span style="margin-right:15px">
                         <i class="post-share"></i>
                         <span>&#x5206;&#x4EAB;:</span>
-                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://yangcongs.github.io/post/hello-gridea/"><i class="fa fa-qrcode"></i></a>
-                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://yangcongs.github.io/post/hello-gridea/&sharesource=qzone&title=Hello Gridea&pics=https://yangcongs.github.io/images/avatar.png?v=1645697483752&summary=&lt;p&gt;👏  欢迎使用 &lt;strong&gt;Gridea&lt;/strong&gt; ！&lt;br&gt;
-✍️  &lt;strong&gt;Gridea&lt;/strong&gt; 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...&lt;/p&gt;
-"><i class="fa fa-qq"></i></a>
-                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://yangcongs.github.io/post/hello-gridea/&sharesource=weibo&title=Hello Gridea + " - " + &lt;p&gt;👏  欢迎使用 &lt;strong&gt;Gridea&lt;/strong&gt; ！&lt;br&gt;
-✍️  &lt;strong&gt;Gridea&lt;/strong&gt; 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...&lt;/p&gt;
-&pic="https://yangcongs.github.io/images/avatar.png?v=1645697483752 "><i class="fa fa-weibo "></i></a>
+                                                                    <a title="QR 码" target="_blank" href="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://yangcongs.github.io/post/vb6-diao-yong-api-da-kai-mu-biao-wen-jian-suo-zai-wen-jian-jia-qie-xuan-zhong-mu-biao-wen-jian/"><i class="fa fa-qrcode"></i></a>
+                                                                    <a title="QQ" target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://yangcongs.github.io/post/vb6-diao-yong-api-da-kai-mu-biao-wen-jian-suo-zai-wen-jian-jia-qie-xuan-zhong-mu-biao-wen-jian/&sharesource=qzone&title=VB6调用API打开目标文件所在文件夹且选中目标文件&pics=https://yangcongs.github.io/images/avatar.png?v=1645697483752&summary="><i class="fa fa-qq"></i></a>
+                                                                    <a title="新浪微博" target="_blank" href="https://service.weibo.com/share/share.php?url=https://yangcongs.github.io/post/vb6-diao-yong-api-da-kai-mu-biao-wen-jian-suo-zai-wen-jian-jia-qie-xuan-zhong-mu-biao-wen-jian/&sharesource=weibo&title=VB6调用API打开目标文件所在文件夹且选中目标文件 + " - " + &pic="https://yangcongs.github.io/images/avatar.png?v=1645697483752 "><i class="fa fa-weibo "></i></a>
 
                                                                     </span>
 																	<!--zanzhu-->
@@ -287,12 +338,6 @@
                                                                                     <span>&#x6807;&#x7B7E;:</span>
                                                                                     <span class="tag ">
                         
-                        
-                        <a href="https://yangcongs.github.io/tag/0SJ4PEmro/">#
-                    Gridea
-                        </a>
-                        
-                            
                                 </span>
                                                                                 </div>
                                                                                 <div>
@@ -307,7 +352,15 @@
                                                                                 <!---->
                                                                                 <section class="post-nav">
                                                                                     
+                                                                                        <a class="prev" rel="prev" href="https://yangcongs.github.io/post/yuan-lai-wo-zhen-de-cuo-guo-ni-liao/">
+                                                                                            谨以此文纪念我错过的你
+                                                                                        </a>
+                                                                                        
                                                                                             
+                                                                                                <a class="next" rel="next" href="https://yangcongs.github.io/post/solidowrks-gong-cheng-tu-xian-kuang-mo-shi-xia-xian-shi-tie-tu-de-fang-fa/">
+                                                                                                    SOLIDOWRKS 工程图线框模式下显示贴图的方法
+                                                                                                </a>
+                                                                                                
                                                                                 </section>
                     </article>
                 </div>

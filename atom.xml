@@ -2,14 +2,135 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yangcongs.github.io</id>
     <title>仓鼠屋</title>
-    <updated>2021-11-19T04:32:40.287Z</updated>
+    <updated>2022-02-24T10:11:29.700Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yangcongs.github.io"/>
     <link rel="self" href="https://yangcongs.github.io/atom.xml"/>
     <subtitle>就像一滴滑落的露珠再也回不到最初的花瓣，我们也回不到过去，曲终人散，谁无过错</subtitle>
     <logo>https://yangcongs.github.io/images/avatar.png</logo>
     <icon>https://yangcongs.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, 仓鼠屋</rights>
+    <rights>All rights reserved 2022, 仓鼠屋</rights>
+    <entry>
+        <title type="html"><![CDATA[谨以此文纪念我错过的你]]></title>
+        <id>https://yangcongs.github.io/post/yuan-lai-wo-zhen-de-cuo-guo-ni-liao/</id>
+        <link href="https://yangcongs.github.io/post/yuan-lai-wo-zhen-de-cuo-guo-ni-liao/">
+        </link>
+        <updated>2022-02-24T08:04:13.000Z</updated>
+        <content type="html"><![CDATA[<p>  昨天听到你的婚期已经定好了，才后知后觉的发现，我是真的错过你了。<br>
+  该怎么说呢，只能怪我们相识太晚，相距太远。<br>
+  最初认识你的时候，我甚至不知道你是个女孩子。那时候一起玩游戏，一起互坑，把你当成好基友，整天找你“搞基”。<br>
+  后来发现你是女孩子，我震惊之余，又觉得理所当然，毕竟那时候的我们是那么合拍，如果你真的是个男孩子，才真有点不正常了。<br>
+  之后我就不再那么火热的去找你了，哪怕我们那么合拍，也只能时而问候，偶尔开黑，催眠自己把你当成一个好基友，忘掉你是一个可爱的女孩子。<br>
+  因为那时候的我是有女朋友的。高中的同学，喜欢，倒真算不上。最初我们在一起，是因为有一次周日晚上我没吃饭，她把她带的饭分给了我，然后我就一直记得她对我好过，后来知道她妈妈得了癌症，然后就emmm算是有点心疼她吧，就有照顾她，后来就自然而然的在一起了。但我们性格并不太合适，甚至没有什么共同爱好，只是因为相处久了，习惯了彼此。她还曾问我喜欢她哪里，我想了想，还真没想到，只记得她曾经对我好过。<br>
+  后来，因为某些原因，我们分开了很久，虽然后来又回过头接触一段时间，但是人变了就是变了，很难再变回最初的样子了。她体验过了更好地生活方式，再也不是曾经那个会把自己的饭分给我吃的那个她了。<br>
+  而对我来说，却有种卸下了一份责任的轻松感。我可以光明正大理直气壮的去找我喜欢的你了。没错，我早就发现我是喜欢你的，可能是我们在一起有说不完的话，也可能是我们可以在一起玩游戏谁也不嫌弃谁菜，还可能是我跟你在一起会觉得很轻松，没有跟别的女孩子在一起时候的紧张感。<br>
+  我不知道你是否也曾对我动心，我只知道那时候的我们无话不谈。我觉得你是世上最可爱的女孩子，却偏偏嘴硬的叫你二狗子，哈哈，现在想来真够幼稚的。美好回忆的细节就留在记忆中吧，我觉得我的泪腺有点发达，不太适合一点一滴的翻出脑海中美好的回忆。<br>
+  可那时候的我太自卑，觉得自己各个方面都配不上你，给不了你我想给你的生活。这么说是因为有别人说我，也许你并不想要那样的生活呢，只是单纯两个人在一起就很好了，但我总觉得，你可以不需要，但我不能没有，我不愿意让你跟我在一起之后，生活质量反而降低了。<br>
+  后来我还是觉得我不应该错过你，就试探着问你父母会不会介意你远嫁，你说如果是大学刚毕业的话，应该还可以。。。我听了之后还有考虑是不是要去你的城市找你，以后就在那里定居。可我最终还是被我的理性给战胜了，毕竟我的父母都在这边，他们年纪大了，应该坚持不到我有能力在你那里买两套房子把他们也接过去，可不在一起生活又不能随时照顾他们。有时候真觉得世界对我都是充满恶意的。<br>
+  后来你在慢慢相亲，再后来你遇到了你的他，你告诉我你觉得你挺喜欢他的时候，不知为何突然很心痛，可我只能用调侃的语气告诉你，你的春天来了。再后来发现你这次是认真的，我也就只能从你的世界慢慢的消失了。。。<br>
+  昨天突然就想起你，就问了一下你们两个的进度，问出口之后我内心竟然在期待你告我你们早就结束了，我在想如果真的如我所想，我应该会不顾一切的去你的城市吧。可错过了就是错过了。<br>
+  只能怪我们相识太晚，相距太远。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[VB6调用API打开目标文件所在文件夹且选中目标文件]]></title>
+        <id>https://yangcongs.github.io/post/vb6-diao-yong-api-da-kai-mu-biao-wen-jian-suo-zai-wen-jian-jia-qie-xuan-zhong-mu-biao-wen-jian/</id>
+        <link href="https://yangcongs.github.io/post/vb6-diao-yong-api-da-kai-mu-biao-wen-jian-suo-zai-wen-jian-jia-qie-xuan-zhong-mu-biao-wen-jian/">
+        </link>
+        <updated>2021-11-25T02:16:21.000Z</updated>
+        <content type="html"><![CDATA[<p><font color=#ea00ee size=3>此方案转载自<a href="https://blog.csdn.net/tanaya/article/details/5829838">CSDN</a>，著作权归作者<a href="https://blog.csdn.net/tanaya">唐古拉山</a>所有。</font></p>
+<pre><code class="language-xml">Option Explicit
+
+' 模块名称: mOpenFolderAndSetFileFocus
+'     作者: 唐细刚
+'     时间: 2010-08-22
+'     功能: VB6调用API打开目标文件所在文件夹且选中目标文件
+' 注：
+' 由于调用 Explorer.exe /select 方式会使系统产生多余的 Explorer.exe 进程
+' 所以还是API来实现较好，速度也有优势，不知道是否低碳? O(∩_∩)O~
+
+Private Declare Function SHCreateFromPath Lib &quot;Shell32&quot; Alias &quot;ILCreateFromPathA&quot; (ByVal lpFileName As String) As Long
+Private Declare Sub SHFree Lib &quot;Shell32&quot; Alias &quot;ILFree&quot; (ByVal lngPidl As Long)
+Private Declare Function SHOpenFolderAndSelectItems Lib &quot;Shell32&quot; ( _
+        ByVal pidlFolder As Long, _
+        ByVal cidl As Long, _
+        ByVal apidl As Long, _
+        ByVal dwFlags As Long) As Long
+
+'增加判断文件是否存在
+Private Const INVALID_HANDLE_VALUE = -1
+Private Const MAX_PATH = 260
+
+Private Type FILETIME
+    dwLowDateTime As Long
+    dwHighDateTime As Long
+End Type
+
+Private Type WIN32_FIND_DATA
+    dwFileAttributes As Long
+    ftCreationTime As FILETIME
+    ftLastAccessTime As FILETIME
+    ftLastWriteTime As FILETIME
+    nFileSizeHigh As Long
+    nFileSizeLow As Long
+    dwReserved0 As Long
+    dwReserved1 As Long
+    cFileName As String * MAX_PATH
+    cAlternate As String * 14
+End Type
+
+Private Declare Function FindFirstFile Lib &quot;kernel32&quot; Alias &quot;FindFirstFileA&quot; ( _
+    ByVal lpFileName As String, _
+    lpFindFileData As WIN32_FIND_DATA) As Long
+
+Private Declare Function FindClose Lib &quot;kernel32&quot; (ByVal hFindFile As Long) As Long
+
+Private Function FileExists(ByVal lpFileName As String) As Boolean
+    Dim tpWFD As WIN32_FIND_DATA
+    Dim lngFile As Long
+    lngFile = FindFirstFile(lpFileName, tpWFD)
+    FileExists = lngFile &lt;&gt; INVALID_HANDLE_VALUE
+    If lngFile Then Call FindClose(lngFile)
+End Function
+
+'调用成功返回 True,否则返回 False
+Public Function OpenFolderAndSetFileFocus(ByVal lpFileName As String) As Boolean
+    On Error Resume Next
+    Dim lngPidl As Long
+    Dim lngRet  As Long
+    Dim strFile As String
+    strFile = Trim(lpFileName)
+    If FileExists(strFile) = False Then Exit Function
+    lngPidl = SHCreateFromPath(strFile &amp; vbNullChar)
+    If lngPidl &lt;&gt; 0 Then
+       lngRet = SHOpenFolderAndSelectItems(lngPidl, 0, 0, 0)
+       If lngRet = 0 Then
+          OpenFolderAndSetFileFocus = True
+       End If
+       Call SHFree(lngPidl)
+    End If
+End Function
+</code></pre>
+<p><font color=#EE1000 size=3>我在VB.NET上使用，修改代码如下：</font></p>
+<pre><code class="language-xml">'打开文件并选中指定文件
+   Private Declare Function SHCreateFromPath Lib &quot;shell32&quot; Alias &quot;ILCreateFromPathA&quot; (
+   ByVal lpFileName As String) As Long
+   Private Declare Function SHOpenFolderAndSelectItems Lib &quot;shell32&quot; (
+           ByVal pidlFolder As Long,
+           ByVal cidl As Long,
+           ByVal apidl As Long,
+           ByVal dwFlags As Long) As Long
+   Public Sub OpenFolderAndSetFileFocus(ByVal Folder As String)
+       Dim lngPidl As Long
+       lngPidl = SHCreateFromPath(Folder &amp; vbNullChar)
+       SHOpenFolderAndSelectItems(lngPidl, 0, 0, 0)
+   End Sub
+
+'调用
+   OpenFolderAndSetFileFocus(&quot;目标文件路径&quot;)
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[SOLIDOWRKS 工程图线框模式下显示贴图的方法]]></title>
         <id>https://yangcongs.github.io/post/solidowrks-gong-cheng-tu-xian-kuang-mo-shi-xia-xian-shi-tie-tu-de-fang-fa/</id>
@@ -312,144 +433,6 @@ End Sub
 <figure data-type="image" tabindex="3"><img src="https://yangcongs.github.io/post-images/1588039418627.png" alt="" loading="lazy"></figure>
 </center> <!--结束居中对齐-->
 <p>  此时就可以愉快地使用耳机了。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【Excel-VBA】点击添加按钮，第一列字母递增]]></title>
-        <id>https://yangcongs.github.io/post/excel-diyiliedizeng/</id>
-        <link href="https://yangcongs.github.io/post/excel-diyiliedizeng/">
-        </link>
-        <updated>2020-04-24T23:01:20.000Z</updated>
-        <summary type="html"><![CDATA[<p><a href="https://www.52pojie.cn/thread-1012274-1-1.html">吾爱</a>上有人提问，刚好有空就顺手写了一下，也搬回来以备后期使用。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p><a href="https://www.52pojie.cn/thread-1012274-1-1.html">吾爱</a>上有人提问，刚好有空就顺手写了一下，也搬回来以备后期使用。</p>
-<!-- more -->
-<pre><code class="language-xml">'作者：yangcongs
-'时间：2019.8.22
-'版本：V1.0
- 
-Sub 宏1()
-    Dim Ln         As String          '第一列最后一次出现的非空单元格的行号
-    Dim str        As String          '单元格中的字符串
-    Dim a          As Long            '字符串长度
-    Dim str1       As String          '字符串中的最后一个字母
-    Dim str2       As String          '字符串中的第一个字母
-    Dim Fv         As String          '字符串最后一个字母的编码字符
-    Dim Sv         As String          '字符串第一个字母的编码字符
-    Dim AddV       As String          '下一个单元格应填入的字母序号
- 
-    '取第一列最后一次出现的非空单元格的行号
-    Ln = Cells(Rows.Count, 1).End(xlUp).Row
-    '取出该单元格中的字符串
-    str = Range(&quot;A&quot; + Ln).Value
-    '获取该字符串的长度
-    a = Len(str)
-    '判断字符串中字母个数
- 
-    '如果只有一个字母
-    If a = 1 Then
-        '把字母转换成编码字符
-        Fv = Right(&quot;000&quot; + AscW(str), 4)
-        Fv = Fv + 1
-        '判断该字母的编码字符递增之后是否超出大写字母的界限
- 
-        If Fv &gt; 90 Then
-            '如果超出界限,则下一个单元格应填入&quot;AA&quot;
-            Worksheets(&quot;Sheet1&quot;).Range(&quot;A&quot; &amp; Ln + 1).Value = &quot;AA&quot;
-        Else
-            '如果没有超出界限，则把该编码字符转换成字母
-            AddV = Chr(Fv)
-            '把该字母填入下一个单元格
-            Worksheets(&quot;Sheet1&quot;).Range(&quot;A&quot; &amp; Ln + 1).Value = AddV
-        End If
- 
-        '如果有两个字母
-    ElseIf a = 2 Then
-        '取出最后一个字母
-        str1 = Right(str, 1)
-        '取出第一个字母
-        str2 = Mid(str, 1, 1)
-        '把最后一个字母转换成编码字符
-        Fv = Right(&quot;000&quot; + AscW(str1), 4)
-        Fv = Fv + 1
-        '判断最后一个字母的编码字符递增之后是否超出大写字母的界限
- 
-        If Fv &gt; 90 Then
-            '如果超出界限,则最后一个字母递增之后应为&quot;A&quot;
-            '此时需要把第一个字母递增
- 
-            '把第一个字母转换成编码字符
-            Sv = Right(&quot;000&quot; + AscW(str2), 4)
-            Sv = Sv + 1
-            '判断第一个字母的编码字符递增之后是否超出大写字母的界限
-             
-            If Sv &gt; 90 Then
-                '如果超出界限，此时两个字母都是&quot;Z&quot;,到达上限
-                '我给出的处理是弹出提示框，结束程序
-                MsgBox (&quot;已经到达最大行！&quot;)
-                '退出程序
-                Exit Sub
-            Else
-                '如果没有超出界限，把递增之后的第一个字母的编码字符转换成字母
-                AddV = Chr(Sv)
-                '把递增之后的字母填入下一个单元格
-                Worksheets(&quot;Sheet1&quot;).Range(&quot;A&quot; &amp; Ln + 1).Value = AddV &amp; &quot;A&quot;
-            End If
-        Else
-            '如果没有超出界限，则第一个字母不变，第二个字母递增
- 
-            '把第二个字母递增之后的编码字符转换成字母
-            AddV = Chr(Fv)
-            '把递增之后的字母填入下一个单元格
-            Worksheets(&quot;Sheet1&quot;).Range(&quot;A&quot; &amp; Ln + 1).Value = str2 &amp; AddV
-        End If
-    End If
-End Sub
-</code></pre>
-<p><a href="http://t.cn/AiQYsdSU">成品链接</a></p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[PiP-Tool，一款可以让电脑的任意区域都实现置顶效果的软件（搬运）]]></title>
-        <id>https://yangcongs.github.io/post/Windows-pip-tool/</id>
-        <link href="https://yangcongs.github.io/post/Windows-pip-tool/">
-        </link>
-        <updated>2020-04-24T22:53:02.000Z</updated>
-        <summary type="html"><![CDATA[<p>这次搬运来的这款软件只有一个功能：在电脑上实现画中画效果。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>这次搬运来的这款软件只有一个功能：在电脑上实现画中画效果。</p>
-<!-- more -->
-<p>作者在GitHub中的解释为：</p>
-<p><font color=#00ffff size=3>画中画工具是在Windows上使用画中画模式的软件。此功能使您可以在继续使用Windows上的任何其他软件的同时，以缩略图形式在屏幕上观看内容（例如视频）。</font></p>
-<p><font color=#00ffff size=3>要使用此工具，请选择一个窗口和该窗口的区域，然后进行验证。随即出现一个带有选定区域的新窗口（始终在顶部）。该软件在最小化窗口的情况下仍无法运行（如果您正在观看视频，并且最小化窗口，则画中画模式下的视频将停止）。</font></p>
-<p><img src="https://attach.52pojie.cn/forum/201912/10/092353lzojmj6myhnmunob.png" alt="" loading="lazy"><br>
-安装时除了选择安装位置，其他一直点next就行了，安装完之后桌面会出线一个这样的图标<br>
-<img src="https://attach.52pojie.cn/forum/201912/10/085852ndh6vzdwzvvoq89l.png" alt="" loading="lazy"><br>
-点击图标之后会出现这样的一个窗口，这时候点击下拉箭头，你所打开的程序就会在下拉条中出现。<br>
-<img src="https://attach.52pojie.cn/forum/201912/10/090142e1ts26u6z6o6f39h.png" alt="" loading="lazy"><br>
-选择你要实现画中画功能的程序，调整画框大小，你就可以为所欲为了<br>
-<img src="https://attach.52pojie.cn/forum/201912/10/092417exk5bjf4hxk2tub3.png" alt="" loading="lazy"><br>
-<img src="https://attach.52pojie.cn/forum/201912/10/092456fv1ptxtiw1lvv3tz.png" alt="" loading="lazy"><br>
-<img src="https://i.loli.net/2019/12/10/nwGoQakLgrZiMD6.gif" alt="" loading="lazy"><br>
-你可以用来追剧、多窗口查阅资料等等，<br>
-<img src="https://attach.52pojie.cn/forum/201912/10/094027wrr2msjnnakana6b.gif" alt="" loading="lazy"><br>
-甚至你想在群里潜水但是又比较忙，你就可以只截取一部分让他置顶暗中观察。</p>
-<p>其他功能请自行探索。</p>
-<p><font color=#cc2314 size=3>安装要求：</font>（多谢@xiaosuobjsd 提醒）<br>
-<font color=#cc2314 size=3>1.Microsoft Windows Vista或更高版本（64位）。</font><br>
-<font color=#cc2314 size=3>2.Microsoft .NET Framework 4.7</font></p>
-<p>注意：<br>
-本软件工作流程跟Snipaste类似，是把你需要置顶的内容按你框选的位置提取出来置顶。<br>
-不过Snipaste是单纯地截屏，把当前页面内容截取出来置顶。<br>
-而本软件是动态截取，截取之后你在源位置的所有操作都会显示在置顶窗口中，比如：<br>
-<img src="https://attach.52pojie.cn/forum/201912/10/133805s3b0lqbql1z3033i.gif" alt="" loading="lazy"><br>
-你会发现我不管是在TIM中打字还是什么，所有的动态变化都会在置顶界面中同步显示。</p>
-<p>弄清楚这波操作之后下面所说的问题就很容易理解了：<br>
-如果你用浏览器看视频的时候把浏览器最小化，而你看视频的那个网站没有后台播放功能的话，视频的播放就会自动暂停。<br>
-而这时候置顶窗口中显示的就是暂停之后的画面，看起来是置顶的画面不动了，好像是软件不能播放视频，但这个情况真不是本软件的锅。<br>
-解决办法是你不要最小化，直接用别的软件窗口来覆盖这个浏览器的窗口，或者换一个影视网站。（多谢@瑪奇 提醒）</p>
-<p><a href="https://github.com/LionelJouin/PiP-Tool">GitHub地址</a><br>
-<a href="http://t.cn/AienEMHG">安装包地址</a></p>
 ]]></content>
     </entry>
 </feed>
