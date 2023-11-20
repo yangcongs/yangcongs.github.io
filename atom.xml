@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://yangcongs.github.io</id>
     <title>仓鼠屋</title>
-    <updated>2023-11-20T01:02:29.795Z</updated>
+    <updated>2023-11-20T01:12:04.786Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://yangcongs.github.io"/>
     <link rel="self" href="https://yangcongs.github.io/atom.xml"/>
@@ -10,6 +10,18 @@
     <logo>https://yangcongs.github.io/images/avatar.png</logo>
     <icon>https://yangcongs.github.io/favicon.ico</icon>
     <rights>All rights reserved 2023, 仓鼠屋</rights>
+    <entry>
+        <title type="html"><![CDATA[同步失败解决方案]]></title>
+        <id>https://yangcongs.github.io/post/tong-bu-shi-bai-jie-jue-fang-an/</id>
+        <link href="https://yangcongs.github.io/post/tong-bu-shi-bai-jie-jue-fang-an/">
+        </link>
+        <updated>2023-11-20T01:05:43.000Z</updated>
+        <content type="html"><![CDATA[<p>创建 GitHub 账号，并创建一个仓库 Token。<br>
+点击<a href="https://github.com/">GitHub</a>，登录 GitHub 之后，点击<a href="https://github.com/settings/tokens/new">这里</a>创建一个 Token，勾选上 repo 的相关权限即可。<br>
+生成之后记得把 Token 复制到你的本地，因为一旦关闭网页将不能再看到它。<br>
+<img src="https://yangcongs.github.io/post-images/1700442592110.jpg" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[VB6调用API打开目标文件所在文件夹且选中目标文件]]></title>
         <id>https://yangcongs.github.io/post/vb6-diao-yong-api-da-kai-mu-biao-wen-jian-suo-zai-wen-jian-jia-qie-xuan-zhong-mu-biao-wen-jian/</id>
@@ -411,101 +423,6 @@ End Sub
 <figure data-type="image" tabindex="3"><img src="https://yangcongs.github.io/post-images/1588039418627.png" alt="" loading="lazy"></figure>
 </center> <!--结束居中对齐-->
 <p>  此时就可以愉快地使用耳机了。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【Excel-VBA】点击添加按钮，第一列字母递增]]></title>
-        <id>https://yangcongs.github.io/post/excel-diyiliedizeng/</id>
-        <link href="https://yangcongs.github.io/post/excel-diyiliedizeng/">
-        </link>
-        <updated>2020-04-24T23:01:20.000Z</updated>
-        <summary type="html"><![CDATA[<p><a href="https://www.52pojie.cn/thread-1012274-1-1.html">吾爱</a>上有人提问，刚好有空就顺手写了一下，也搬回来以备后期使用。</p>
-]]></summary>
-        <content type="html"><![CDATA[<p><a href="https://www.52pojie.cn/thread-1012274-1-1.html">吾爱</a>上有人提问，刚好有空就顺手写了一下，也搬回来以备后期使用。</p>
-<!-- more -->
-<pre><code class="language-xml">'作者：yangcongs
-'时间：2019.8.22
-'版本：V1.0
- 
-Sub 宏1()
-    Dim Ln         As String          '第一列最后一次出现的非空单元格的行号
-    Dim str        As String          '单元格中的字符串
-    Dim a          As Long            '字符串长度
-    Dim str1       As String          '字符串中的最后一个字母
-    Dim str2       As String          '字符串中的第一个字母
-    Dim Fv         As String          '字符串最后一个字母的编码字符
-    Dim Sv         As String          '字符串第一个字母的编码字符
-    Dim AddV       As String          '下一个单元格应填入的字母序号
- 
-    '取第一列最后一次出现的非空单元格的行号
-    Ln = Cells(Rows.Count, 1).End(xlUp).Row
-    '取出该单元格中的字符串
-    str = Range(&quot;A&quot; + Ln).Value
-    '获取该字符串的长度
-    a = Len(str)
-    '判断字符串中字母个数
- 
-    '如果只有一个字母
-    If a = 1 Then
-        '把字母转换成编码字符
-        Fv = Right(&quot;000&quot; + AscW(str), 4)
-        Fv = Fv + 1
-        '判断该字母的编码字符递增之后是否超出大写字母的界限
- 
-        If Fv &gt; 90 Then
-            '如果超出界限,则下一个单元格应填入&quot;AA&quot;
-            Worksheets(&quot;Sheet1&quot;).Range(&quot;A&quot; &amp; Ln + 1).Value = &quot;AA&quot;
-        Else
-            '如果没有超出界限，则把该编码字符转换成字母
-            AddV = Chr(Fv)
-            '把该字母填入下一个单元格
-            Worksheets(&quot;Sheet1&quot;).Range(&quot;A&quot; &amp; Ln + 1).Value = AddV
-        End If
- 
-        '如果有两个字母
-    ElseIf a = 2 Then
-        '取出最后一个字母
-        str1 = Right(str, 1)
-        '取出第一个字母
-        str2 = Mid(str, 1, 1)
-        '把最后一个字母转换成编码字符
-        Fv = Right(&quot;000&quot; + AscW(str1), 4)
-        Fv = Fv + 1
-        '判断最后一个字母的编码字符递增之后是否超出大写字母的界限
- 
-        If Fv &gt; 90 Then
-            '如果超出界限,则最后一个字母递增之后应为&quot;A&quot;
-            '此时需要把第一个字母递增
- 
-            '把第一个字母转换成编码字符
-            Sv = Right(&quot;000&quot; + AscW(str2), 4)
-            Sv = Sv + 1
-            '判断第一个字母的编码字符递增之后是否超出大写字母的界限
-             
-            If Sv &gt; 90 Then
-                '如果超出界限，此时两个字母都是&quot;Z&quot;,到达上限
-                '我给出的处理是弹出提示框，结束程序
-                MsgBox (&quot;已经到达最大行！&quot;)
-                '退出程序
-                Exit Sub
-            Else
-                '如果没有超出界限，把递增之后的第一个字母的编码字符转换成字母
-                AddV = Chr(Sv)
-                '把递增之后的字母填入下一个单元格
-                Worksheets(&quot;Sheet1&quot;).Range(&quot;A&quot; &amp; Ln + 1).Value = AddV &amp; &quot;A&quot;
-            End If
-        Else
-            '如果没有超出界限，则第一个字母不变，第二个字母递增
- 
-            '把第二个字母递增之后的编码字符转换成字母
-            AddV = Chr(Fv)
-            '把递增之后的字母填入下一个单元格
-            Worksheets(&quot;Sheet1&quot;).Range(&quot;A&quot; &amp; Ln + 1).Value = str2 &amp; AddV
-        End If
-    End If
-End Sub
-</code></pre>
-<p><a href="http://t.cn/AiQYsdSU">成品链接</a></p>
 ]]></content>
     </entry>
 </feed>
